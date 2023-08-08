@@ -139,6 +139,90 @@
       "description": "Weekend food supplies",
       "date": "2023-08-24",
       "cost": 40.0
+    },
+    {
+      "id": 21,
+      "category": "Dining",
+      "description": "Celebratory dinner",
+      "date": "2023-08-25",
+      "cost": 70.0
+    },
+    {
+      "id": 22,
+      "category": "Bills",
+      "description": "Water bill",
+      "date": "2023-08-30",
+      "cost": 40.0
+    },
+    {
+      "id": 23,
+      "category": "Groceries",
+      "description": "Bulk grocery shopping",
+      "date": "2023-08-31",
+      "cost": 80.0
+    },
+    {
+      "id": 24,
+      "category": "Groceries",
+      "description": "Specialty ingredients",
+      "date": "2023-09-01",
+      "cost": 25.0
+    },
+    {
+      "id": 25,
+      "category": "Groceries",
+      "description": "Bakery items",
+      "date": "2023-09-02",
+      "cost": 15.0
+    },
+    {
+      "id": 26,
+      "category": "Groceries",
+      "description": "Fruits and vegetables",
+      "date": "2023-09-03",
+      "cost": 30.0
+    },
+    {
+      "id": 27,
+      "category": "Groceries",
+      "description": "Snacks for the week",
+      "date": "2023-09-04",
+      "cost": 20.0
+    },
+    {
+      "id": 28,
+      "category": "Transportation",
+      "description": "Weekly bus pass",
+      "date": "2023-09-05",
+      "cost": 15.0
+    },
+    {
+      "id": 29,
+      "category": "Transportation",
+      "description": "Rideshare to the airport",
+      "date": "2023-09-06",
+      "cost": 25.0
+    },
+    {
+      "id": 28,
+      "category": "Transportation",
+      "description": "Subway fare",
+      "date": "2023-09-07",
+      "cost": 5.0
+    },
+    {
+      "id": 29,
+      "category": "Transportation",
+      "description": "Car maintenance",
+      "date": "2023-09-08",
+      "cost": 120.0
+    },
+    {
+      "id": 30,
+      "category": "Transportation",
+      "description": "Fuel for road trip",
+      "date": "2023-09-09",
+      "cost": 70.0
     }
   ]
 }
