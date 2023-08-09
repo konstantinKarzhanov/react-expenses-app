@@ -3,7 +3,7 @@ import "./App.css";
 import Insights from "./Insights";
 
 function App() {
-  return <Insights />;
+  <Insights />;
 }
 
 export default App;
