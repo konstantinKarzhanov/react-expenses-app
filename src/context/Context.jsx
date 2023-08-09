@@ -13,7 +13,9 @@ const ContextProvider = ({ children }) => {
     setDataFromAPI(data);
   }, [data]);
 
-  return <Context.Provider value={dataFromAPI}>{children}</Context.Provider>;
+  return (
+    <Context.Provider value={{ dataFromAPI }}>{children}</Context.Provider>
+  );
 };
 
 export { ContextProvider };
