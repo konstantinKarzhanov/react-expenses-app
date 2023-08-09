@@ -192,20 +192,6 @@
     {
       "id": 28,
       "category": "Transportation",
-      "description": "Weekly bus pass",
-      "date": "2023-09-05",
-      "cost": 15.0
-    },
-    {
-      "id": 29,
-      "category": "Transportation",
-      "description": "Rideshare to the airport",
-      "date": "2023-09-06",
-      "cost": 25.0
-    },
-    {
-      "id": 28,
-      "category": "Transportation",
       "description": "Subway fare",
       "date": "2023-09-07",
       "cost": 5.0
