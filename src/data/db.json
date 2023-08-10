@@ -2,171 +2,206 @@
   "categories": [
     {
       "id": 1,
-      "name": "uncategorized",
-      "expenses": [
-        {
-          "id": "uncategorized-1",
-          "description": "Weekly grocery shopping",
-          "date": "2023-08-01",
-          "cost": 50.0
-        }
-      ]
+      "description": "uncategorized"
     },
     {
       "id": 2,
-      "name": "dining",
-      "expenses": [
-        {
-          "id": "dining-1",
-          "description": "Dinner at a restaurant",
-          "date": "2023-08-03",
-          "cost": 60.0
-        },
-        {
-          "id": "dining-2",
-          "description": "Lunch with friends",
-          "date": "2023-08-05",
-          "cost": 25.0
-        }
-      ]
+      "description": "dining"
     },
     {
       "id": 3,
-      "name": "entertainment",
-      "expenses": [
-        {
-          "id": "entertainment-1",
-          "description": "Movie night",
-          "date": "2023-08-06",
-          "cost": 15.0
-        },
-        {
-          "id": "entertainment-2",
-          "description": "Concert tickets",
-          "date": "2023-08-08",
-          "cost": 75.0
-        },
-        {
-          "id": "entertainment-3",
-          "description": "Theme park visit",
-          "date": "2023-08-10",
-          "cost": 40.0
-        }
-      ]
+      "description": "entertainment"
     },
     {
       "id": 4,
-      "name": "shopping",
-      "expenses": [
-        {
-          "id": "shopping-1",
-          "description": "Clothing shopping",
-          "date": "2023-08-10",
-          "cost": 120.0
-        }
-      ]
+      "description": "shopping"
     },
     {
       "id": 5,
-      "name": "travel",
-      "expenses": [
-        {
-          "id": "travel-1",
-          "description": "Flight tickets",
-          "date": "2023-08-15",
-          "cost": 350.0
-        },
-        {
-          "id": "travel-2",
-          "description": "Hotel stay",
-          "date": "2023-08-18",
-          "cost": 200.0
-        },
-        {
-          "id": "travel-3",
-          "description": "Local getaway",
-          "date": "2023-08-22",
-          "cost": 100.0
-        }
-      ]
+      "description": "travel"
     },
     {
       "id": 6,
-      "name": "health",
-      "expenses": [
-        {
-          "id": "health-1",
-          "description": "Doctor's visit",
-          "date": "2023-08-20",
-          "cost": 75.0
-        },
-        {
-          "id": "health-2",
-          "description": "Gym membership",
-          "date": "2023-08-22",
-          "cost": 50.0
-        }
-      ]
+      "description": "health"
     },
     {
       "id": 7,
-      "name": "utilities",
-      "expenses": [
-        {
-          "id": "utilities-1",
-          "description": "Electricity bill",
-          "date": "2023-08-25",
-          "cost": 80.0
-        }
-      ]
+      "description": "utilities"
     },
     {
       "id": 8,
-      "name": "education",
-      "expenses": [
-        {
-          "id": "education-1",
-          "description": "Textbook purchase",
-          "date": "2023-08-30",
-          "cost": 45.0
-        }
-      ]
+      "description": "education"
     },
     {
       "id": 9,
-      "name": "gifts",
-      "expenses": [
-        {
-          "id": "gifts-1",
-          "description": "Birthday gift",
-          "date": "2023-09-05",
-          "cost": 30.0
-        },
-        {
-          "id": "gifts-2",
-          "description": "Holiday present",
-          "date": "2023-09-08",
-          "cost": 50.0
-        },
-        {
-          "id": "gifts-3",
-          "description": "Anniversary gift",
-          "date": "2023-09-12",
-          "cost": 40.0
-        }
-      ]
+      "description": "gifts"
     },
     {
       "id": 10,
-      "name": "home",
-      "expenses": [
-        {
-          "id": "home-1",
-          "description": "Furniture purchase",
-          "date": "2023-09-10",
-          "cost": 250.0
-        }
-      ]
+      "description": "home"
+    }
+  ],
+  "expenses": [
+    {
+      "id": "1",
+      "description": "Weekly grocery shopping",
+      "category": "uncategorized",
+      "date": "2023-08-01",
+      "cost": 50.0
+    },
+    {
+      "id": "2",
+      "description": "Lunch with colleagues",
+      "category": "uncategorized",
+      "date": "2023-08-02",
+      "cost": 30.5
+    },
+    {
+      "id": "3",
+      "description": "Dinner at a restaurant",
+      "category": "dining",
+      "date": "2023-08-03",
+      "cost": 60.0
+    },
+    {
+      "id": "4",
+      "description": "Lunch with friends",
+      "category": "dining",
+      "date": "2023-08-05",
+      "cost": 25.0
+    },
+    {
+      "id": "5",
+      "description": "Movie night",
+      "category": "entertainment",
+      "date": "2023-08-06",
+      "cost": 15.0
+    },
+    {
+      "id": "6",
+      "description": "Concert tickets",
+      "category": "entertainment",
+      "date": "2023-08-08",
+      "cost": 75.0
+    },
+    {
+      "id": "7",
+      "description": "Theme park visit",
+      "category": "entertainment",
+      "date": "2023-08-10",
+      "cost": 40.0
+    },
+    {
+      "id": "8",
+      "description": "Clothing shopping",
+      "category": "shopping",
+      "date": "2023-08-10",
+      "cost": 120.0
+    },
+    {
+      "id": "9",
+      "description": "Electronics purchase",
+      "category": "shopping",
+      "date": "2023-08-12",
+      "cost": 200.0
+    },
+    {
+      "id": "10",
+      "description": "Flight tickets",
+      "category": "travel",
+      "date": "2023-08-15",
+      "cost": 350.0
+    },
+    {
+      "id": "11",
+      "description": "Hotel stay",
+      "category": "travel",
+      "date": "2023-08-18",
+      "cost": 200.0
+    },
+    {
+      "id": "12",
+      "description": "Local getaway",
+      "category": "travel",
+      "date": "2023-08-22",
+      "cost": 100.0
+    },
+    {
+      "id": "13",
+      "description": "Doctor's visit",
+      "category": "health",
+      "date": "2023-08-20",
+      "cost": 75.0
+    },
+    {
+      "id": "14",
+      "description": "Gym membership",
+      "category": "health",
+      "date": "2023-08-22",
+      "cost": 50.0
+    },
+    {
+      "id": "15",
+      "description": "Electricity bill",
+      "category": "utilities",
+      "date": "2023-08-25",
+      "cost": 80.0
+    },
+    {
+      "id": "16",
+      "description": "Internet subscription",
+      "category": "utilities",
+      "date": "2023-08-28",
+      "cost": 60.0
+    },
+    {
+      "id": "17",
+      "description": "Textbook purchase",
+      "category": "education",
+      "date": "2023-08-30",
+      "cost": 45.0
+    },
+    {
+      "id": "18",
+      "description": "Online course fee",
+      "category": "education",
+      "date": "2023-09-02",
+      "cost": 70.0
+    },
+    {
+      "id": "19",
+      "description": "Birthday gift",
+      "category": "gifts",
+      "date": "2023-09-05",
+      "cost": 30.0
+    },
+    {
+      "id": "20",
+      "description": "Holiday present",
+      "category": "gifts",
+      "date": "2023-09-08",
+      "cost": 50.0
+    },
+    {
+      "id": "21",
+      "description": "Anniversary gift",
+      "category": "gifts",
+      "date": "2023-09-12",
+      "cost": 40.0
+    },
+    {
+      "id": "22",
+      "description": "Furniture purchase",
+      "category": "home",
+      "date": "2023-09-10",
+      "cost": 250.0
+    },
+    {
+      "id": "23",
+      "description": "Appliance repair",
+      "category": "home",
+      "date": "2023-09-12",
+      "cost": 100.0
     }
   ]
 }
