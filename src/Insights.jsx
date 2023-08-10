@@ -1,77 +1,171 @@
 import React from "react";
-import Datapoint from "./Datapoint";
 import { useState, useEffect } from "react";
+import BarChart from "./BarChart";
 
 const Insights = () => {
   const [data, setData] = useState([]);
+  const [barData, setBarData] = useState({
+    labels: [],
+    datasets: [
+      {
+        label: "Expenses",
+        data: [],
+      },
+    ],
+  });
+
   useEffect(() => {
     const dataFetch = async () => {
-      const res = await fetch("http://localhost:5000/expenses");
+      const res = await fetch("http://localhost:5000/categories");
       const data = await res.json();
-      console.log(data);
       setData(data);
     };
     dataFetch();
-  }, []);
+    const labels = data.map((category) => category.name);
+    const categoryTotalsArray = [];
 
-  const valueForCategory = new Set();
+    data.forEach((categoryData) => {
+      const expenses = categoryData.expenses;
 
-  for (const obj of data) {
-    valueForCategory.add(obj.category);
+      let categoryTotal = 0;
+      expenses.forEach((expense) => {
+        categoryTotal += expense.cost;
+      });
+
+      categoryTotalsArray.push(categoryTotal);
+    });
+    setBarData({
+      labels: labels,
+      datasets: [
+        {
+          label: "Expenses",
+          data: categoryTotalsArray,
+        },
+      ],
+    });
+  }, [data]);
+
+  // const categoryTotals = {};
+
+  // // finding the category name and totals.
+  // data.forEach((categoryData) => {
+  //   const categoryName = categoryData.name;
+  //   const expenses = categoryData.expenses;
+
+  //   let categoryTotal = 0;
+  //   expenses.forEach((expense) => {
+  //     categoryTotal += expense.cost;
+  //   });
+
+  //   categoryTotals[categoryName] = categoryTotal;
+  // });
+
+  // const categoryTotalsArray = [];
+
+  // for (const categoryName in categoryTotals) {
+  //   categoryTotalsArray.push({
+  //     category: categoryName,
+  //     total: categoryTotals[categoryName],
+  //   });
+  // }
+
+  // const categoryTotalsArray = [];
+
+  // data.forEach((categoryData) => {
+  //   const expenses = categoryData.expenses;
+
+  //   let categoryTotal = 0;
+  //   expenses.forEach((expense) => {
+  //     categoryTotal += expense.cost;
+  //   });
+
+  //   categoryTotalsArray.push({
+  //     categoryTotal,
+  //   });
+  // });
+
+  // console.log(categoryTotalsArray);
+
+  const categoryNames = [];
+
+  for (const category of data) {
+    categoryNames.push(category.name);
   }
 
-  const valueArray = Array.from(valueForCategory);
-  console.log(valueArray);
+  function findExpenseWithHighestCost(data) {
+    let highestCost = 0;
+    let highestCostExpense = 0;
 
-  let highestCost = 0;
-  for (const obj of data) {
-    if (typeof obj.cost === "number" && obj.cost > highestCost) {
-      highestCost = obj.cost;
-    }
-  }
-
-  let lowestCost = highestCost;
-  for (const obj of data) {
-    if (typeof obj.cost === "number" && obj.cost < lowestCost) {
-      lowestCost = obj.cost;
-    }
-  }
-
-  let totalSpending = 0;
-  for (const obj of data) {
-    totalSpending += obj.cost;
-  }
-
-  const percentage = (category, dataSet) => {
-    let categorySpent = 0;
-    for (const obj of dataSet) {
-      if (typeof obj.cost === "number" && obj.category === category) {
-        categorySpent += obj.cost;
+    for (const category of data) {
+      for (const expense of category.expenses) {
+        if (expense.cost > highestCost) {
+          highestCost = expense.cost;
+          highestCostExpense = expense;
+        }
       }
     }
-    return categorySpent;
-  };
+
+    return highestCostExpense;
+  }
+
+  const expenseWithHighestCost = findExpenseWithHighestCost(data);
+
+  function findExpenseWithLowestCost(data) {
+    let lowestCost = Number.POSITIVE_INFINITY;
+    let lowestCostExpense = 0;
+
+    for (const category of data) {
+      for (const expense of category.expenses) {
+        if (expense.cost < lowestCost) {
+          lowestCost = expense.cost;
+          lowestCostExpense = expense;
+        }
+      }
+    }
+
+    return lowestCostExpense;
+  }
+
+  const expenseWithLowestCost = findExpenseWithLowestCost(data);
 
   return (
     <>
-      <div>Expenses Insights</div>
-      <div>
-        Lets take a look at the different categories you are spending your money
-        on
+      <h1 id="header-text">Expenses Insights</h1>
+      <div id="sub-header-text">
+        Lets take a look at the categories you spent money on this month
       </div>
-      <div>
-        {valueArray.map((value) => (
-          <Datapoint dataPoint={value} />
+      <div id="category-container">
+        {categoryNames.map((categoryName, index) => (
+          <div className="data-category" key={index}>
+            {categoryName}
+          </div>
         ))}
       </div>
-      <div>Your most expensive expense was ${highestCost}</div>
-      <div>Your least expensive expense was ${lowestCost}</div>
-      <div>Total Spent: ${totalSpending}</div>
-      <div>total amount on Bills = ${percentage("Bills", data)}</div>
-      <div>
-        Percentage of total spending on Bills
-        {Math.round((percentage("Bills", data) / totalSpending) * 100)}%
+
+      <div className="cost-container">
+        <div className="cost-title">Your Highest Cost Expense:</div>
+        {/* The highest cost expense was: ${expenseWithHighestCost.cost} for{" "}
+        {expenseWithHighestCost.description} */}
+        <div className="cost-details">
+          ${expenseWithHighestCost.cost} for{" "}
+          {expenseWithHighestCost.description}
+        </div>
       </div>
+
+      <div className="cost-container">
+        <div className="cost-title">Your Lowest Cost Expense:</div>
+        <div className="cost-details">
+          ${expenseWithLowestCost.cost} for {expenseWithLowestCost.description}
+        </div>
+      </div>
+      {/* <div id="category-container">
+        {categoryTotalsArray.map((data, index) => (
+          <div className="data-category" key={index}>
+            {data.category} {data.total}
+          </div>
+        ))}
+      </div> */}
+      <BarChart chartData={barData} />
     </>
   );
 };

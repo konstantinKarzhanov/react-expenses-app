@@ -1,7 +1,7 @@
 import React from "react";
 
 const Datapoint = ({ dataPoint }) => {
-  return <div>{dataPoint}</div>;
+  return <div className="data-category">{dataPoint}</div>;
 };
 
 export default Datapoint;
