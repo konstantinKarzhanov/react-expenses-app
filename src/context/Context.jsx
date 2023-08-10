@@ -4,11 +4,11 @@ import useFetch from "../hooks/useFetch";
 const Context = React.createContext();
 
 const ContextProvider = ({ children }) => {
-  const API_URL = "http://localhost:5000/categories";
+  const API_URL = "http://localhost:5000/db";
+
   const expensesFormID = "expenses-form";
   const defaultCategory = "uncategorized";
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [dataFromAPI, setDataFromAPI] = useState([]);
+  const [dataFromAPI, setDataFromAPI] = useState({});
 
   const { setURL, setOptions, data, isLoading, fetchError } = useFetch(API_URL);
 
