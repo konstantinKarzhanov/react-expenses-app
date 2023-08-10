@@ -45,47 +45,6 @@ const Insights = () => {
     });
   }, [data]);
 
-  // const categoryTotals = {};
-
-  // // finding the category name and totals.
-  // data.forEach((categoryData) => {
-  //   const categoryName = categoryData.name;
-  //   const expenses = categoryData.expenses;
-
-  //   let categoryTotal = 0;
-  //   expenses.forEach((expense) => {
-  //     categoryTotal += expense.cost;
-  //   });
-
-  //   categoryTotals[categoryName] = categoryTotal;
-  // });
-
-  // const categoryTotalsArray = [];
-
-  // for (const categoryName in categoryTotals) {
-  //   categoryTotalsArray.push({
-  //     category: categoryName,
-  //     total: categoryTotals[categoryName],
-  //   });
-  // }
-
-  // const categoryTotalsArray = [];
-
-  // data.forEach((categoryData) => {
-  //   const expenses = categoryData.expenses;
-
-  //   let categoryTotal = 0;
-  //   expenses.forEach((expense) => {
-  //     categoryTotal += expense.cost;
-  //   });
-
-  //   categoryTotalsArray.push({
-  //     categoryTotal,
-  //   });
-  // });
-
-  // console.log(categoryTotalsArray);
-
   const categoryNames = [];
 
   for (const category of data) {
@@ -158,13 +117,6 @@ const Insights = () => {
           ${expenseWithLowestCost.cost} for {expenseWithLowestCost.description}
         </div>
       </div>
-      {/* <div id="category-container">
-        {categoryTotalsArray.map((data, index) => (
-          <div className="data-category" key={index}>
-            {data.category} {data.total}
-          </div>
-        ))}
-      </div> */}
       <BarChart chartData={barData} />
     </>
   );
