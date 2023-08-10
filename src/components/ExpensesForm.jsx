@@ -13,16 +13,21 @@ const ExpensesForm = () => {
 
   return (
     <form id={expensesFormID} onSubmit={handleSubmit}>
-      <ExpensesInput typeHandle="text" placeHolderHandle="avadakedavra" />
+      <ExpensesInput
+        typeHandle="text"
+        placeHolderHandle="avadakedavra"
+        required
+      />
       <ExpensesInput
         typeHandle="number"
         placeHolderHandle="$ 00.00"
         minHandle="0"
         maxHandle="999999.99"
         stepHandle="0.01"
+        required
       />
-      <ExpensesInput typeHandle="date" />
-      <ExpensesSelect />
+      <ExpensesInput typeHandle="date" required />
+      <ExpensesSelect required />
       <ExpensesButton children="add" />
     </form>
   );

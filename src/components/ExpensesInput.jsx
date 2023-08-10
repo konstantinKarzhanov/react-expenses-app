@@ -6,6 +6,7 @@ const ExpensesInput = ({
   minHandle,
   maxHandle,
   stepHandle,
+  required,
 }) => {
   return (
     <input
@@ -14,6 +15,7 @@ const ExpensesInput = ({
       min={minHandle}
       max={maxHandle}
       step={stepHandle}
+      required={required}
     />
   );
 };

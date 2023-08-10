@@ -1,7 +1,11 @@
 import React from "react";
 
-const ExpensesOption = ({ children }) => {
-  return <option value={children}>{children}</option>;
+const ExpensesOption = ({ children, selected }) => {
+  return (
+    <option value={children} selected={selected}>
+      {children}
+    </option>
+  );
 };
 
 export default ExpensesOption;
