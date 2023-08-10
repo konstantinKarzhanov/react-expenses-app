@@ -4,7 +4,8 @@ import useFetch from "../hooks/useFetch";
 const Context = React.createContext();
 
 const ContextProvider = ({ children }) => {
-  const API_URL = "http://localhost:5000/expenses";
+  const API_URL = "http://localhost:5000/categories";
+  const expensesFormID = "expenses-form";
   const [dataFromAPI, setDataFromAPI] = useState([]);
 
   const { data, isLoading, fetchError } = useFetch(API_URL);
@@ -14,7 +15,9 @@ const ContextProvider = ({ children }) => {
   }, [data]);
 
   return (
-    <Context.Provider value={{ dataFromAPI }}>{children}</Context.Provider>
+    <Context.Provider value={{ expensesFormID, dataFromAPI }}>
+      {children}
+    </Context.Provider>
   );
 };
 

@@ -7,6 +7,7 @@ const useFetch = (dataURL, dataOptions) => {
 
   useEffect(() => {
     let isMounted = true;
+    console.log("mounted");
     const fetchData = async (url, options) => {
       setIsLoading(true);
       try {
