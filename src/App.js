@@ -10,6 +10,7 @@ import NotFoundPage from "./pages/NotFoundPage";
 
 // styles
 import "./App.css";
+import Insights from "./Insights";
 
 function App() {
   return (
