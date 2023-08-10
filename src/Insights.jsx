@@ -14,36 +14,69 @@ const Insights = () => {
     ],
   });
 
+  // useEffect(() => {
+  //   const dataFetch = async () => {
+  //     const res = await fetch("http://localhost:5000/categories");
+  //     const data = await res.json();
+  //     setData(data);
+  //   };
+  //   dataFetch();
+  //   const labels = data.map((category) => category.name);
+  //   const categoryTotalsArray = [];
+
+  //   data.forEach((categoryData) => {
+  //     const expenses = categoryData.expenses;
+
+  //     let categoryTotal = 0;
+  //     expenses.forEach((expense) => {
+  //       categoryTotal += expense.cost;
+  //     });
+
+  //     categoryTotalsArray.push(categoryTotal);
+  //   });
+  //   setBarData({
+  //     labels: labels,
+  //     datasets: [
+  //       {
+  //         label: "Expenses",
+  //         data: categoryTotalsArray,
+  //       },
+  //     ],
+  //   });
+  // }, []);
+
   useEffect(() => {
-    const dataFetch = async () => {
-      const res = await fetch("http://localhost:5000/categories");
-      const data = await res.json();
-      setData(data);
+    const fetchData = async () => {
+      try {
+        const res = await fetch("http://localhost:5000/categories");
+        const data = await res.json();
+        setData(data);
+
+        const labels = data.map((category) => category.name);
+        const categoryTotalsArray = data.map((categoryData) => {
+          const categoryTotal = categoryData.expenses.reduce(
+            (total, expense) => total + expense.cost,
+            0
+          );
+          return categoryTotal;
+        });
+
+        setBarData({
+          labels: labels,
+          datasets: [
+            {
+              label: "Expenses",
+              data: categoryTotalsArray,
+            },
+          ],
+        });
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
     };
-    dataFetch();
-    const labels = data.map((category) => category.name);
-    const categoryTotalsArray = [];
 
-    data.forEach((categoryData) => {
-      const expenses = categoryData.expenses;
-
-      let categoryTotal = 0;
-      expenses.forEach((expense) => {
-        categoryTotal += expense.cost;
-      });
-
-      categoryTotalsArray.push(categoryTotal);
-    });
-    setBarData({
-      labels: labels,
-      datasets: [
-        {
-          label: "Expenses",
-          data: categoryTotalsArray,
-        },
-      ],
-    });
-  }, [data]);
+    fetchData();
+  }, []);
 
   const categoryNames = [];
 
@@ -103,8 +136,6 @@ const Insights = () => {
 
       <div className="cost-container">
         <div className="cost-title">Your Highest Cost Expense:</div>
-        {/* The highest cost expense was: ${expenseWithHighestCost.cost} for{" "}
-        {expenseWithHighestCost.description} */}
         <div className="cost-details">
           ${expenseWithHighestCost.cost} for{" "}
           {expenseWithHighestCost.description}
@@ -117,6 +148,7 @@ const Insights = () => {
           ${expenseWithLowestCost.cost} for {expenseWithLowestCost.description}
         </div>
       </div>
+      <div>Here is a breakdown of your current Spending</div>
       <BarChart chartData={barData} />
     </>
   );
