@@ -15,8 +15,8 @@ const ContextProvider = ({ children }) => {
   const { setURL, setOptions, data, isLoading, fetchError } = useFetch(API_URL);
 
   useEffect(() => {
-    setDataFromAPI((dataFromAPIPrev) => {
-      return { ...dataFromAPIPrev, ...data };
+    setDataFromAPI((prevDataFromAPI) => {
+      return { ...prevDataFromAPI, ...data };
     });
   }, [data]);
 
