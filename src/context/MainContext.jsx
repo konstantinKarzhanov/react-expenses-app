@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import useFetch from "../hooks/useFetch";
 
-const Context = React.createContext();
+const MainContext = React.createContext();
 
-const ContextProvider = ({ children }) => {
+const MainContextProvider = ({ children }) => {
   const API_URL = "http://localhost:5000/db";
   const CATEGORIES_URL = "http://localhost:5000/expenses";
   const EXPENSES_URL = "http://localhost:5000/expenses";
@@ -125,13 +125,13 @@ const ContextProvider = ({ children }) => {
   };
 
   return (
-    <Context.Provider
+    <MainContext.Provider
       value={{ expensesFormID, defaultCategory, dataFromAPI, setIsSubmitted }}
     >
       {children}
-    </Context.Provider>
+    </MainContext.Provider>
   );
 };
 
-export { ContextProvider };
-export default Context;
+export { MainContextProvider };
+export default MainContext;

@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 
 // components
-import { ContextProvider } from "./context/Context";
+import { MainContextProvider } from "./context/MainContext";
 
 // pages
 import ExpensesPage from "./pages/ExpensesPage";
@@ -14,13 +14,13 @@ import Insights from "./Insights";
 
 function App() {
   return (
-    <ContextProvider>
+    <MainContextProvider>
       <Routes>
         <Route path="/" element={<ExpensesPage />}></Route>
         <Route path="expenses" element={<ExpensesPage />}></Route>
         <Route path="*" element={<NotFoundPage />}></Route>
       </Routes>
-    </ContextProvider>
+    </MainContextProvider>
   );
 }
 
