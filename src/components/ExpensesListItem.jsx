@@ -1,10 +1,10 @@
 import React from "react";
 import ExpensesDetailsList from "./ExpensesDetailsList";
 
-const ExpensesListItem = ({ dataHandle }) => {
+const ExpensesListItem = ({ idHandle, dataHandle }) => {
   return (
     <li>
-      <ExpensesDetailsList dataHandle={dataHandle} />
+      <ExpensesDetailsList idHandle={idHandle} dataHandle={dataHandle} />
       <div></div>
     </li>
   );

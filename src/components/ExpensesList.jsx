@@ -6,7 +6,11 @@ const ExpensesList = () => {
   const { dataFromAPI } = useMainContext();
   const listArr = dataFromAPI["expenses"]
     ? dataFromAPI["expenses"].map(({ id, ...data }) => (
-        <ExpensesListItem key={id} dataHandle={data} />
+        <ExpensesListItem
+          key={id}
+          idHandle={`expense-${id}`}
+          dataHandle={data}
+        />
       ))
     : [];
   return <ul>{listArr}</ul>;
