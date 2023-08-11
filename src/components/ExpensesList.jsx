@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
-import Context from "../context/Context";
+import React from "react";
+import useMainContext from "../hooks/useMainContext";
 import ExpensesListItem from "./ExpensesListItem";
 
 const ExpensesList = () => {
-  const { dataFromAPI } = useContext(Context);
+  const { dataFromAPI } = useMainContext();
   const listArr = dataFromAPI["expenses"]
     ? dataFromAPI["expenses"].map(({ id, ...data }) => (
         <ExpensesListItem key={id} dataHandle={data} />

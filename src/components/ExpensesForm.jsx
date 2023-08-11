@@ -1,11 +1,11 @@
-import React, { useContext } from "react";
-import Context from "../context/Context";
+import React from "react";
+import useMainContext from "../hooks/useMainContext";
 import ExpensesInput from "./ExpensesInput";
 import ExpensesSelect from "./ExpensesSelect";
 import ExpensesButton from "./ExpensesButton";
 
 const ExpensesForm = () => {
-  const { expensesFormID, setIsSubmitted } = useContext(Context);
+  const { expensesFormID, setIsSubmitted } = useMainContext();
 
   const handleSubmit = (event) => {
     event.preventDefault();

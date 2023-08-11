@@ -1,9 +1,9 @@
-import React, { useState, useContext } from "react";
-import Context from "../context/Context";
+import React, { useState } from "react";
+import useMainContext from "../hooks/useMainContext";
 import ExpensesOption from "./ExpensesOption";
 
 const ExpensesSelect = ({ required }) => {
-  const { defaultCategory, dataFromAPI } = useContext(Context);
+  const { defaultCategory, dataFromAPI } = useMainContext();
   const [selectedCategory, setSelectedCategory] = useState(defaultCategory);
 
   const optionArr = dataFromAPI["categories"]
