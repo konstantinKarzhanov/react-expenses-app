@@ -43,165 +43,165 @@
   ],
   "expenses": [
     {
-      "id": "1",
+      "id": 1,
       "description": "Weekly grocery shopping",
       "category": "uncategorized",
       "date": "2023-08-01",
-      "cost": 50.0
+      "cost": "50.00"
     },
     {
-      "id": "2",
+      "id": 2,
       "description": "Lunch with colleagues",
       "category": "uncategorized",
       "date": "2023-08-02",
       "cost": 30.5
     },
     {
-      "id": "3",
+      "id": 3,
       "description": "Dinner at a restaurant",
       "category": "dining",
       "date": "2023-08-03",
-      "cost": 60.0
+      "cost": 60
     },
     {
-      "id": "4",
+      "id": 4,
       "description": "Lunch with friends",
       "category": "dining",
       "date": "2023-08-05",
-      "cost": 25.0
+      "cost": 25
     },
     {
-      "id": "5",
+      "id": 5,
       "description": "Movie night",
       "category": "entertainment",
       "date": "2023-08-06",
-      "cost": 15.0
+      "cost": 15
     },
     {
-      "id": "6",
+      "id": 6,
       "description": "Concert tickets",
       "category": "entertainment",
       "date": "2023-08-08",
-      "cost": 75.0
+      "cost": 75
     },
     {
-      "id": "7",
+      "id": 7,
       "description": "Theme park visit",
       "category": "entertainment",
       "date": "2023-08-10",
-      "cost": 40.0
+      "cost": 40
     },
     {
-      "id": "8",
+      "id": 8,
       "description": "Clothing shopping",
       "category": "shopping",
       "date": "2023-08-10",
-      "cost": 120.0
+      "cost": 120
     },
     {
-      "id": "9",
+      "id": 9,
       "description": "Electronics purchase",
       "category": "shopping",
       "date": "2023-08-12",
-      "cost": 200.0
+      "cost": 200
     },
     {
-      "id": "10",
+      "id": 10,
       "description": "Flight tickets",
       "category": "travel",
       "date": "2023-08-15",
-      "cost": 350.0
+      "cost": 350
     },
     {
-      "id": "11",
+      "id": 11,
       "description": "Hotel stay",
       "category": "travel",
       "date": "2023-08-18",
-      "cost": 200.0
+      "cost": 200
     },
     {
-      "id": "12",
+      "id": 12,
       "description": "Local getaway",
       "category": "travel",
       "date": "2023-08-22",
-      "cost": 100.0
+      "cost": 100
     },
     {
-      "id": "13",
+      "id": 13,
       "description": "Doctor's visit",
       "category": "health",
       "date": "2023-08-20",
-      "cost": 75.0
+      "cost": 75
     },
     {
-      "id": "14",
+      "id": 14,
       "description": "Gym membership",
       "category": "health",
       "date": "2023-08-22",
-      "cost": 50.0
+      "cost": 50
     },
     {
-      "id": "15",
+      "id": 15,
       "description": "Electricity bill",
       "category": "utilities",
       "date": "2023-08-25",
-      "cost": 80.0
+      "cost": 80
     },
     {
-      "id": "16",
+      "id": 16,
       "description": "Internet subscription",
       "category": "utilities",
       "date": "2023-08-28",
-      "cost": 60.0
+      "cost": 60
     },
     {
-      "id": "17",
+      "id": 17,
       "description": "Textbook purchase",
       "category": "education",
       "date": "2023-08-30",
-      "cost": 45.0
+      "cost": 45
     },
     {
-      "id": "18",
+      "id": 18,
       "description": "Online course fee",
       "category": "education",
       "date": "2023-09-02",
-      "cost": 70.0
+      "cost": 70
     },
     {
-      "id": "19",
+      "id": 19,
       "description": "Birthday gift",
       "category": "gifts",
       "date": "2023-09-05",
-      "cost": 30.0
+      "cost": 30
     },
     {
-      "id": "20",
+      "id": 20,
       "description": "Holiday present",
       "category": "gifts",
       "date": "2023-09-08",
-      "cost": 50.0
+      "cost": 50
     },
     {
-      "id": "21",
+      "id": 21,
       "description": "Anniversary gift",
       "category": "gifts",
       "date": "2023-09-12",
-      "cost": 40.0
+      "cost": 40
     },
     {
-      "id": "22",
+      "id": 22,
       "description": "Furniture purchase",
       "category": "home",
       "date": "2023-09-10",
-      "cost": 250.0
+      "cost": 250
     },
     {
-      "id": "23",
+      "id": 23,
       "description": "Appliance repair",
       "category": "home",
       "date": "2023-09-12",
-      "cost": 100.0
+      "cost": 100
     }
   ]
 }
