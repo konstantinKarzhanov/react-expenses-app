@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 const useFetch = (dataURL, dataOptions) => {
   const [url, setURL] = useState(dataURL);
   const [options, setOptions] = useState(dataOptions);
-  const [data, setData] = useState([]);
+  const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [fetchError, setFetchError] = useState(null);
 
@@ -21,7 +21,7 @@ const useFetch = (dataURL, dataOptions) => {
         }
       } catch ({ name, message }) {
         if (isMounted) {
-          setData([]);
+          setData({});
           setFetchError({ name, message });
         }
       } finally {
@@ -37,7 +37,7 @@ const useFetch = (dataURL, dataOptions) => {
     };
 
     return cleanUp;
-  }, [dataURL, dataOptions]);
+  }, [url, options]);
 
   return { setURL, setOptions, data, isLoading, fetchError };
 };
