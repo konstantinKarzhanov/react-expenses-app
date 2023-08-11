@@ -15,11 +15,15 @@ const ExpensesForm = () => {
   return (
     <form id={expensesFormID} onSubmit={handleSubmit}>
       <ExpensesInput
+        idHandle="expense-description"
+        nameHandle="description"
         typeHandle="text"
         placeHolderHandle="avadakedavra"
         required
       />
       <ExpensesInput
+        idHandle="expense-cost"
+        nameHandle="cost"
         typeHandle="number"
         placeHolderHandle="$ 00.00"
         minHandle="0"
@@ -27,8 +31,17 @@ const ExpensesForm = () => {
         stepHandle="0.01"
         required
       />
-      <ExpensesInput typeHandle="date" required />
-      <ExpensesSelect required />
+      <ExpensesInput
+        idHandle="expense-date"
+        nameHandle="date"
+        typeHandle="date"
+        required
+      />
+      <ExpensesSelect
+        idHandle="expense-category"
+        nameHandle="category"
+        required
+      />
       <ExpensesButton children="add" />
     </form>
   );
