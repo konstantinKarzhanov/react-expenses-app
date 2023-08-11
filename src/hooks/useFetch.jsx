@@ -1,12 +1,15 @@
 import { useState, useEffect } from "react";
 
 const useFetch = (dataURL, dataOptions) => {
-  const [data, setData] = useState([]);
+  const [url, setURL] = useState(dataURL);
+  const [options, setOptions] = useState(dataOptions);
+  const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [fetchError, setFetchError] = useState(null);
 
   useEffect(() => {
     let isMounted = true;
+    console.log("mounted");
     const fetchData = async (url, options) => {
       setIsLoading(true);
       try {
@@ -18,7 +21,7 @@ const useFetch = (dataURL, dataOptions) => {
         }
       } catch ({ name, message }) {
         if (isMounted) {
-          setData([]);
+          setData({});
           setFetchError({ name, message });
         }
       } finally {
@@ -26,7 +29,7 @@ const useFetch = (dataURL, dataOptions) => {
       }
     };
 
-    fetchData(dataURL, dataOptions);
+    fetchData(url, options);
 
     const cleanUp = () => {
       console.log("cleaned up");
@@ -34,9 +37,9 @@ const useFetch = (dataURL, dataOptions) => {
     };
 
     return cleanUp;
-  }, [dataURL, dataOptions]);
+  }, [url, options]);
 
-  return { data, isLoading, fetchError };
+  return { setURL, setOptions, data, isLoading, fetchError };
 };
 
 export default useFetch;
