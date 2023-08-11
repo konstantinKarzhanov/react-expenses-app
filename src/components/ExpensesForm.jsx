@@ -5,10 +5,11 @@ import ExpensesSelect from "./ExpensesSelect";
 import ExpensesButton from "./ExpensesButton";
 
 const ExpensesForm = () => {
-  const { expensesFormID } = useContext(Context);
+  const { expensesFormID, setIsSubmitted } = useContext(Context);
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    setIsSubmitted(true);
   };
 
   return (
