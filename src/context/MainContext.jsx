@@ -7,8 +7,7 @@ const MainContextProvider = ({ children }) => {
   const API_URL = "http://localhost:5000/db";
   const CATEGORIES_URL = "http://localhost:5000/expenses";
   const EXPENSES_URL = "http://localhost:5000/expenses";
-  const expensesFormID = "expenses-form";
-  const defaultCategory = "uncategorized";
+
   const [dataFromAPI, setDataFromAPI] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -22,27 +21,6 @@ const MainContextProvider = ({ children }) => {
 
   useEffect(() => {
     isSubmitted && console.log("submitted");
-
-    // isSubmitted &&
-    //   addItem(EXPENSES_URL, {
-    //     id: 24,
-    //     description: "Avadakedavra",
-    //     category: "home",
-    //     date: "2023-08-10",
-    //     cost: 999.99,
-    //   });
-
-    // isSubmitted &&
-    //   updateItem(EXPENSES_URL, 24, {
-    //     id: 24,
-    //     description: "updatedCedavra",
-    //     category: "travel",
-    //     date: "2023-07-10",
-    //     cost: 222.22,
-    //   });
-
-    // isSubmitted && deleteItem(EXPENSES_URL, 24);
-
     isSubmitted && setIsSubmitted(false);
   }, [isSubmitted]);
 
@@ -136,8 +114,6 @@ const MainContextProvider = ({ children }) => {
     <MainContext.Provider
       value={{
         EXPENSES_URL,
-        expensesFormID,
-        defaultCategory,
         isLoading,
         fetchError,
         dataFromAPI,

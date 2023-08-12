@@ -6,10 +6,16 @@ import ExpensesSelect from "./ExpensesSelect";
 import ExpensesButton from "./ExpensesButton";
 
 const ExpensesForm = () => {
-  const { EXPENSES_URL, expensesFormID, setIsSubmitted, createItem, addItem } =
+  const { EXPENSES_URL, setIsSubmitted, createItem, addItem } =
     useMainContext();
-  const { descriptionInput, costInput, dateInput, categoryInput } =
-    useExpensesContext();
+  const {
+    expensesFormID,
+    descriptionInput,
+    costInput,
+    dateInput,
+    categoryInput,
+    clearInput,
+  } = useExpensesContext();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -23,6 +29,13 @@ const ExpensesForm = () => {
         dateInput.current,
         costInput.current
       )
+    );
+
+    clearInput(
+      descriptionInput.current,
+      costInput.current,
+      dateInput.current,
+      categoryInput.current
     );
     setIsSubmitted(true);
   };

@@ -1,20 +1,36 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 
 const ExpensesContext = React.createContext();
 
 const ExpensesContextProvider = ({ children }) => {
+  const expensesFormID = "expenses-form";
+  const defaultCategory = "uncategorized";
   const descriptionInput = useRef();
   const costInput = useRef();
   const dateInput = useRef();
   const categoryInput = useRef();
+  const [selectedCategory, setSelectedCategory] = useState(defaultCategory);
+
+  const clearInput = (...args) =>
+    args.forEach((item) => {
+      if (item === categoryInput.current) {
+        setSelectedCategory(defaultCategory);
+      } else {
+        item.value = item.defaultValue;
+      }
+    });
 
   return (
     <ExpensesContext.Provider
       value={{
+        expensesFormID,
         descriptionInput,
         costInput,
         dateInput,
         categoryInput,
+        selectedCategory,
+        setSelectedCategory,
+        clearInput,
       }}
     >
       {children}
