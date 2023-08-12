@@ -3,7 +3,6 @@ import React, { useRef, useState } from "react";
 const ExpensesContext = React.createContext();
 
 const ExpensesContextProvider = ({ children }) => {
-  const expensesFormID = "expenses-form";
   const defaultCategory = "uncategorized";
   const descriptionInput = useRef();
   const costInput = useRef();
@@ -23,7 +22,6 @@ const ExpensesContextProvider = ({ children }) => {
   return (
     <ExpensesContext.Provider
       value={{
-        expensesFormID,
         descriptionInput,
         costInput,
         dateInput,

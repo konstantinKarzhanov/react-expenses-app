@@ -5,17 +5,12 @@ import ExpensesInput from "./ExpensesInput";
 import ExpensesSelect from "./ExpensesSelect";
 import ExpensesButton from "./ExpensesButton";
 
-const ExpensesForm = () => {
+const ExpensesForm = ({ idHandle }) => {
   const { EXPENSES_URL, setIsSubmitted, createItem, addItem } =
     useMainContext();
-  const {
-    expensesFormID,
-    descriptionInput,
-    costInput,
-    dateInput,
-    categoryInput,
-    clearInput,
-  } = useExpensesContext();
+
+  const { descriptionInput, costInput, dateInput, categoryInput, clearInput } =
+    useExpensesContext();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -41,7 +36,7 @@ const ExpensesForm = () => {
   };
 
   return (
-    <form id={expensesFormID} onSubmit={handleSubmit}>
+    <form id={idHandle} onSubmit={handleSubmit}>
       <ExpensesInput
         refHandle={descriptionInput}
         idHandle="expense-description"

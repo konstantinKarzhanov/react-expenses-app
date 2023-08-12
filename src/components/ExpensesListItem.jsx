@@ -4,11 +4,14 @@ import ExpensesDetailsList from "./ExpensesDetailsList";
 import ExpensesButton from "./ExpensesButton";
 
 const ExpensesListItem = ({ idHandle, dataHandle }) => {
-  const { EXPENSES_URL, deleteItem } = useMainContext();
+  const { EXPENSES_URL, deleteItem, isOverlayShown, setIsOverlayShown } =
+    useMainContext();
   const editBtn = useRef();
   const deleteBtn = useRef();
 
-  const processEdit = () => {};
+  const processEdit = () => {
+    setIsOverlayShown(!isOverlayShown);
+  };
   const processDelete = (id) => {
     window.confirm("Are you sure you want to delete this item?") &&
       deleteItem(EXPENSES_URL, id);
