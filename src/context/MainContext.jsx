@@ -102,11 +102,9 @@ const MainContextProvider = ({ children }) => {
       if (url === EXPENSES_URL) {
         return {
           ...prevDataFromAPI,
-          expenses: [
-            ...prevDataFromAPI["expenses"].map((item) =>
-              item.id === id ? { ...item, ...body } : item
-            ),
-          ],
+          expenses: prevDataFromAPI["expenses"].map((item) =>
+            item.id === id ? { ...item, ...body } : item
+          ),
         };
       } else if (url === CATEGORIES_URL) {
         // placeholder for the page with categories
@@ -122,9 +120,9 @@ const MainContextProvider = ({ children }) => {
       if (url === EXPENSES_URL) {
         return {
           ...prevDataFromAPI,
-          expenses: [
-            ...prevDataFromAPI["expenses"].filter((item) => item.id !== id),
-          ],
+          expenses: prevDataFromAPI["expenses"].filter(
+            (item) => item.id !== id
+          ),
         };
       } else if (url === CATEGORIES_URL) {
         // placeholder for the page with categories
@@ -146,6 +144,8 @@ const MainContextProvider = ({ children }) => {
         setIsSubmitted,
         createItem,
         addItem,
+        updateItem,
+        deleteItem,
       }}
     >
       {children}
