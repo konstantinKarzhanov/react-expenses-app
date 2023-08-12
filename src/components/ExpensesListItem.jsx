@@ -10,7 +10,8 @@ const ExpensesListItem = ({ idHandle, dataHandle }) => {
 
   const processEdit = () => {};
   const processDelete = (id) => {
-    deleteItem(EXPENSES_URL, id);
+    window.confirm("Are you sure you want to delete this item?") &&
+      deleteItem(EXPENSES_URL, id);
     console.log(`item with id: ${id} has been deleted`);
   };
 
