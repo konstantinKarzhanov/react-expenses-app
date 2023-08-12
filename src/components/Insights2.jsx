@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import useFetch from "../hooks/useFetch";
 import BarChart from "./BarChart";
-
+import {
+  findHighestCostExpense,
+  findLowestCostExpense,
+} from "../utils/insightsUtils.js";
 const Insights2 = () => {
   const [barData, setBarData] = useState({
     labels: [],
@@ -41,7 +44,7 @@ const Insights2 = () => {
         labels: categoryDescriptions,
         datasets: [
           {
-            label: "Expenses",
+            label: "Expenses by Category",
             data: totalCostsByCategory,
           },
         ],
@@ -66,19 +69,9 @@ const Insights2 = () => {
   const expenses = data.expenses || [];
 
   // Find the expense with the highest cost
-  const highestCostExpense = expenses.reduce((maxExpense, currentExpense) => {
-    if (currentExpense.cost > maxExpense.cost) {
-      return currentExpense;
-    }
-    return maxExpense;
-  }, expenses[0] || {});
+  const highestCostExpense = findHighestCostExpense(expenses);
 
-  const lowestCostExpense = expenses.reduce((minExpense, currentExpense) => {
-    if (currentExpense.cost < minExpense.cost) {
-      return currentExpense;
-    }
-    return minExpense;
-  }, expenses[0] || {});
+  const lowestCostExpense = findLowestCostExpense(expenses);
 
   return (
     <>

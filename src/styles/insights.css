@@ -39,15 +39,15 @@ Placeholer CSS for insights and bar graph .insights-container {
   margin: 5rem auto;
   background-color: rgb(17, 168, 228);
   width: 40%;
-  height: 300px;
   border-radius: 10px;
+  padding: 2rem;
 }
 
 .cost-title {
   font-family: "Poppins", sans-serif;
   color: white;
   text-align: center;
-  padding: 1.5rem;
+  padding-bottom: 1.5rem;
   font-size: 3rem;
 }
 
