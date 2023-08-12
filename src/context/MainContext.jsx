@@ -71,6 +71,16 @@ const MainContextProvider = ({ children }) => {
     });
   };
 
+  const createItem = (field, ...args) => ({
+    id: dataFromAPI[field].length + 1,
+    ...args.reduce((acc, { name, value }) => {
+      if (!acc[name]) {
+        acc[name] = value;
+      }
+      return acc;
+    }, {}),
+  });
+
   const addItem = (url, body) => {
     setDataFromAPI((prevDataFromAPI) => {
       if (url === EXPENSES_URL) {
@@ -92,11 +102,9 @@ const MainContextProvider = ({ children }) => {
       if (url === EXPENSES_URL) {
         return {
           ...prevDataFromAPI,
-          expenses: [
-            ...prevDataFromAPI["expenses"].map((item) =>
-              item.id === id ? { ...item, ...body } : item
-            ),
-          ],
+          expenses: prevDataFromAPI["expenses"].map((item) =>
+            item.id === id ? { ...item, ...body } : item
+          ),
         };
       } else if (url === CATEGORIES_URL) {
         // placeholder for the page with categories
@@ -112,9 +120,9 @@ const MainContextProvider = ({ children }) => {
       if (url === EXPENSES_URL) {
         return {
           ...prevDataFromAPI,
-          expenses: [
-            ...prevDataFromAPI["expenses"].filter((item) => item.id !== id),
-          ],
+          expenses: prevDataFromAPI["expenses"].filter(
+            (item) => item.id !== id
+          ),
         };
       } else if (url === CATEGORIES_URL) {
         // placeholder for the page with categories
@@ -126,7 +134,19 @@ const MainContextProvider = ({ children }) => {
 
   return (
     <MainContext.Provider
-      value={{ expensesFormID, defaultCategory, dataFromAPI, setIsSubmitted }}
+      value={{
+        EXPENSES_URL,
+        expensesFormID,
+        defaultCategory,
+        isLoading,
+        fetchError,
+        dataFromAPI,
+        setIsSubmitted,
+        createItem,
+        addItem,
+        updateItem,
+        deleteItem,
+      }}
     >
       {children}
     </MainContext.Provider>

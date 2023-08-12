@@ -10,7 +10,12 @@ const ExpensesContextProvider = ({ children }) => {
 
   return (
     <ExpensesContext.Provider
-      value={{ descriptionInput, costInput, dateInput, categoryInput }}
+      value={{
+        descriptionInput,
+        costInput,
+        dateInput,
+        categoryInput,
+      }}
     >
       {children}
     </ExpensesContext.Provider>
