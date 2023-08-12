@@ -30,6 +30,7 @@ const ExpensesForm = () => {
   return (
     <form id={expensesFormID} onSubmit={handleSubmit}>
       <ExpensesInput
+        refHandle={descriptionInput}
         idHandle="expense-description"
         nameHandle="description"
         typeHandle="text"
@@ -37,6 +38,7 @@ const ExpensesForm = () => {
         required
       />
       <ExpensesInput
+        refHandle={costInput}
         idHandle="expense-cost"
         nameHandle="cost"
         typeHandle="number"
@@ -47,17 +49,19 @@ const ExpensesForm = () => {
         required
       />
       <ExpensesInput
+        refHandle={dateInput}
         idHandle="expense-date"
         nameHandle="date"
         typeHandle="date"
         required
       />
       <ExpensesSelect
+        refHandle={categoryInput}
         idHandle="expense-category"
         nameHandle="category"
         required
       />
-      <ExpensesButton children="add" />
+      <ExpensesButton classHandle={"btn--submit"} children="add" />
     </form>
   );
 };
