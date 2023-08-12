@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import useMainContext from "../hooks/useMainContext";
+import useExpensesContext from "../hooks/useExpensesContext";
 import ExpensesOption from "./ExpensesOption";
 
-const ExpensesSelect = ({ required }) => {
+const ExpensesSelect = ({ idHandle, nameHandle, required }) => {
   const { defaultCategory, dataFromAPI } = useMainContext();
+  const { categoryInput } = useExpensesContext();
   const [selectedCategory, setSelectedCategory] = useState(defaultCategory);
 
   const optionArr = dataFromAPI["categories"]
@@ -14,8 +16,10 @@ const ExpensesSelect = ({ required }) => {
 
   return (
     <select
+      ref={categoryInput}
       onChange={(event) => setSelectedCategory(event.target.value)}
-      name="expense-category"
+      id={idHandle}
+      name={nameHandle}
       value={selectedCategory}
       required={required}
     >

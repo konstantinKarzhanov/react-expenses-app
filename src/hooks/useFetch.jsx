@@ -25,7 +25,10 @@ const useFetch = (dataURL, dataOptions) => {
           setFetchError({ name, message });
         }
       } finally {
-        isMounted && setIsLoading(false);
+        isMounted &&
+          setTimeout(() => {
+            setIsLoading(false);
+          }, 1000);
       }
     };
 

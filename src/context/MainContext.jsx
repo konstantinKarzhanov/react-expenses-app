@@ -71,6 +71,16 @@ const MainContextProvider = ({ children }) => {
     });
   };
 
+  const createItem = (field, ...args) => ({
+    id: dataFromAPI[field].length + 1,
+    ...args.reduce((acc, { name, value }) => {
+      if (!acc[name]) {
+        acc[name] = value;
+      }
+      return acc;
+    }, {}),
+  });
+
   const addItem = (url, body) => {
     setDataFromAPI((prevDataFromAPI) => {
       if (url === EXPENSES_URL) {
@@ -126,7 +136,17 @@ const MainContextProvider = ({ children }) => {
 
   return (
     <MainContext.Provider
-      value={{ expensesFormID, defaultCategory, dataFromAPI, setIsSubmitted }}
+      value={{
+        EXPENSES_URL,
+        expensesFormID,
+        defaultCategory,
+        isLoading,
+        fetchError,
+        dataFromAPI,
+        setIsSubmitted,
+        createItem,
+        addItem,
+      }}
     >
       {children}
     </MainContext.Provider>
