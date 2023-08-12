@@ -140,6 +140,8 @@ const MainContextProvider = ({ children }) => {
         EXPENSES_URL,
         expensesFormID,
         defaultCategory,
+        isLoading,
+        fetchError,
         dataFromAPI,
         setIsSubmitted,
         createItem,
