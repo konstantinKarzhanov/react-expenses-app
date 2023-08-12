@@ -75,7 +75,7 @@ const MainContextProvider = ({ children }) => {
     id: dataFromAPI[field].slice(-1)[0].id + 1,
     ...args.reduce((acc, { name, value }) => {
       if (!acc[name]) {
-        acc[name] = value;
+        acc[name] = name !== "cost" ? value : +value;
       }
       return acc;
     }, {}),
