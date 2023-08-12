@@ -72,7 +72,7 @@ const MainContextProvider = ({ children }) => {
   };
 
   const createItem = (field, ...args) => ({
-    id: dataFromAPI[field].length + 1,
+    id: dataFromAPI[field].slice(-1)[0].id + 1,
     ...args.reduce((acc, { name, value }) => {
       if (!acc[name]) {
         acc[name] = value;
