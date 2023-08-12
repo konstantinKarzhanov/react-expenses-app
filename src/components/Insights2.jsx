@@ -18,34 +18,36 @@ const Insights2 = () => {
   );
 
   useEffect(() => {
-    const categoryDescriptions = data.categories.map(
-      (category) => category.description
-    );
-    // Calculate total expenses for each category
-    const categoryTotalCosts = {};
-    expenses.forEach((expense) => {
-      if (categoryTotalCosts[expense.category]) {
-        categoryTotalCosts[expense.category] += expense.cost;
-      } else {
-        categoryTotalCosts[expense.category] = expense.cost;
-      }
-    });
+    if (!isLoading && data.categories && data.expenses) {
+      const categoryDescriptions = data.categories.map(
+        (category) => category.description
+      );
+      // Calculate total expenses for each category
+      const categoryTotalCosts = {};
+      data.expenses.forEach((expense) => {
+        if (categoryTotalCosts[expense.category]) {
+          categoryTotalCosts[expense.category] += expense.cost;
+        } else {
+          categoryTotalCosts[expense.category] = expense.cost;
+        }
+      });
 
-    // Extract the total costs in the same order as categoryDescriptions
-    const totalCostsByCategory = categoryDescriptions.map(
-      (categoryDescription) => categoryTotalCosts[categoryDescription] || 0
-    );
+      // Extract the total costs in the same order as categoryDescriptions
+      const totalCostsByCategory = categoryDescriptions.map(
+        (categoryDescription) => categoryTotalCosts[categoryDescription] || 0
+      );
 
-    setBarData({
-      labels: categoryDescriptions,
-      datasets: [
-        {
-          label: "Expenses",
-          data: totalCostsByCategory,
-        },
-      ],
-    });
-  }, []);
+      setBarData({
+        labels: categoryDescriptions,
+        datasets: [
+          {
+            label: "Expenses",
+            data: totalCostsByCategory,
+          },
+        ],
+      });
+    }
+  }, [isLoading, data]);
 
   // Use isLoading and fetchError to handle loading and error states
   if (isLoading) {
