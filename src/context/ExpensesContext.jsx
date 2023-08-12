@@ -7,8 +7,6 @@ const ExpensesContextProvider = ({ children }) => {
   const costInput = useRef();
   const dateInput = useRef();
   const categoryInput = useRef();
-  const editBtn = useRef();
-  const deleteBtn = useRef();
 
   return (
     <ExpensesContext.Provider
@@ -17,8 +15,6 @@ const ExpensesContextProvider = ({ children }) => {
         costInput,
         dateInput,
         categoryInput,
-        editBtn,
-        deleteBtn,
       }}
     >
       {children}

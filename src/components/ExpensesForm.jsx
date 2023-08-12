@@ -56,11 +56,12 @@ const ExpensesForm = () => {
         required
       />
       <ExpensesSelect
+        refHandle={categoryInput}
         idHandle="expense-category"
         nameHandle="category"
         required
       />
-      <ExpensesButton children="add" />
+      <ExpensesButton classHandle={"btn--submit"} children="add" />
     </form>
   );
 };
