@@ -1,7 +1,7 @@
 import React from "react";
 
-const ExpensesButton = ({ children }) => {
-  return <button>{children}</button>;
+const ExpensesButton = ({ refHandle, children }) => {
+  return <button ref={refHandle}>{children}</button>;
 };
 
 export default ExpensesButton;

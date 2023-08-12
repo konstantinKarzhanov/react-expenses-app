@@ -7,10 +7,19 @@ const ExpensesContextProvider = ({ children }) => {
   const costInput = useRef();
   const dateInput = useRef();
   const categoryInput = useRef();
+  const editBtn = useRef();
+  const deleteBtn = useRef();
 
   return (
     <ExpensesContext.Provider
-      value={{ descriptionInput, costInput, dateInput, categoryInput }}
+      value={{
+        descriptionInput,
+        costInput,
+        dateInput,
+        categoryInput,
+        editBtn,
+        deleteBtn,
+      }}
     >
       {children}
     </ExpensesContext.Provider>
