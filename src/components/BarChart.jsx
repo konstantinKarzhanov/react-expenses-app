@@ -8,7 +8,6 @@ const BarChart = ({ barData }) => {
       <div className="graph-container">
         <Bar data={barData} />
       </div>
-      <div>Testing</div>
     </>
   );
 };
