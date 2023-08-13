@@ -1,228 +1,207 @@
 {
-  "expenses": [
+  "categories": [
     {
       "id": 1,
-      "category": "Groceries",
-      "description": "Weekly grocery shopping",
-      "date": "2023-08-01",
-      "cost": 50.0
+      "description": "uncategorized"
     },
     {
       "id": 2,
-      "category": "Dining",
+      "description": "dining"
+    },
+    {
+      "id": 3,
+      "description": "entertainment"
+    },
+    {
+      "id": 4,
+      "description": "shopping"
+    },
+    {
+      "id": 5,
+      "description": "travel"
+    },
+    {
+      "id": 6,
+      "description": "health"
+    },
+    {
+      "id": 7,
+      "description": "utilities"
+    },
+    {
+      "id": 8,
+      "description": "education"
+    },
+    {
+      "id": 9,
+      "description": "gifts"
+    },
+    {
+      "id": 10,
+      "description": "home"
+    }
+  ],
+  "expenses": [
+    {
+      "id": 1,
+      "description": "Weekly grocery shopping",
+      "category": "uncategorized",
+      "date": "2023-08-01",
+      "cost": 50
+    },
+    {
+      "id": 2,
       "description": "Lunch with colleagues",
+      "category": "uncategorized",
       "date": "2023-08-02",
       "cost": 30.5
     },
     {
       "id": 3,
-      "category": "Transportation",
-      "description": "Bus fare",
+      "description": "Dinner at a restaurant",
+      "category": "dining",
       "date": "2023-08-03",
-      "cost": 20.0
+      "cost": 60
     },
     {
       "id": 4,
-      "category": "Housing",
-      "description": "Monthly rent",
-      "date": "2023-08-04",
-      "cost": 1000.0
+      "description": "Lunch with friends",
+      "category": "dining",
+      "date": "2023-08-05",
+      "cost": 25
     },
     {
       "id": 5,
-      "category": "Bills",
-      "description": "Electricity bill",
-      "date": "2023-08-05",
-      "cost": 80.0
+      "description": "Movie night",
+      "category": "entertainment",
+      "date": "2023-08-06",
+      "cost": 15
     },
     {
       "id": 6,
-      "category": "Groceries",
-      "description": "Snacks and essentials",
-      "date": "2023-08-06",
-      "cost": 25.0
+      "description": "Concert tickets",
+      "category": "entertainment",
+      "date": "2023-08-08",
+      "cost": 75
     },
     {
       "id": 7,
-      "category": "Dining",
-      "description": "Dinner with family",
-      "date": "2023-08-07",
-      "cost": 45.75
+      "description": "Theme park visit",
+      "category": "entertainment",
+      "date": "2023-08-10",
+      "cost": 40
     },
     {
       "id": 8,
-      "category": "Transportation",
-      "description": "Fuel for the car",
-      "date": "2023-08-08",
-      "cost": 40.0
+      "description": "Clothing shopping",
+      "category": "shopping",
+      "date": "2023-08-10",
+      "cost": 120
     },
     {
       "id": 9,
-      "category": "Housing",
-      "description": "Home maintenance",
-      "date": "2023-08-09",
-      "cost": 150.0
+      "description": "Electronics purchase",
+      "category": "shopping",
+      "date": "2023-08-12",
+      "cost": 200
     },
     {
       "id": 10,
-      "category": "Bills",
-      "description": "Internet bill",
-      "date": "2023-08-10",
-      "cost": 50.0
+      "description": "Flight tickets",
+      "category": "travel",
+      "date": "2023-08-15",
+      "cost": 350
     },
     {
       "id": 11,
-      "category": "Groceries",
-      "description": "Fresh produce",
-      "date": "2023-08-11",
-      "cost": 15.0
+      "description": "Hotel stay",
+      "category": "travel",
+      "date": "2023-08-18",
+      "cost": 200
     },
     {
       "id": 12,
-      "category": "Dining",
-      "description": "Takeout for movie night",
-      "date": "2023-08-12",
-      "cost": 28.5
+      "description": "Local getaway",
+      "category": "travel",
+      "date": "2023-08-22",
+      "cost": 100
     },
     {
       "id": 13,
-      "category": "Transportation",
-      "description": "Metro card refill",
-      "date": "2023-08-13",
-      "cost": 10.0
+      "description": "Doctor's visit",
+      "category": "health",
+      "date": "2023-08-20",
+      "cost": 75
     },
     {
       "id": 14,
-      "category": "Housing",
-      "description": "Monthly utilities",
-      "date": "2023-08-14",
-      "cost": 120.0
+      "description": "Gym membership",
+      "category": "health",
+      "date": "2023-08-22",
+      "cost": 50
     },
     {
       "id": 15,
-      "category": "Bills",
-      "description": "Phone bill",
-      "date": "2023-08-15",
-      "cost": 70.0
+      "description": "Electricity bill",
+      "category": "utilities",
+      "date": "2023-08-25",
+      "cost": 80
     },
     {
       "id": 16,
-      "category": "Entertainment",
-      "description": "Concert tickets",
-      "date": "2023-08-20",
-      "cost": 60.0
+      "description": "Internet subscription",
+      "category": "utilities",
+      "date": "2023-08-28",
+      "cost": 60
     },
     {
       "id": 17,
-      "category": "Health",
-      "description": "Prescription medication",
-      "date": "2023-08-21",
-      "cost": 45.0
+      "description": "Textbook purchase",
+      "category": "education",
+      "date": "2023-08-30",
+      "cost": 45
     },
     {
       "id": 18,
-      "category": "Entertainment",
-      "description": "Board game purchase",
-      "date": "2023-08-22",
-      "cost": 30.0
+      "description": "Online course fee",
+      "category": "education",
+      "date": "2023-09-02",
+      "cost": 70
     },
     {
       "id": 19,
-      "category": "Transportation",
-      "description": "Taxi ride",
-      "date": "2023-08-23",
-      "cost": 15.0
+      "description": "Birthday gift",
+      "category": "gifts",
+      "date": "2023-09-05",
+      "cost": 30
     },
     {
       "id": 20,
-      "category": "Groceries",
-      "description": "Weekend food supplies",
-      "date": "2023-08-24",
-      "cost": 40.0
+      "description": "Holiday present",
+      "category": "gifts",
+      "date": "2023-09-08",
+      "cost": 50
     },
     {
       "id": 21,
-      "category": "Dining",
-      "description": "Celebratory dinner",
-      "date": "2023-08-25",
-      "cost": 70.0
+      "description": "Anniversary gift",
+      "category": "gifts",
+      "date": "2023-09-12",
+      "cost": 40
     },
     {
       "id": 22,
-      "category": "Bills",
-      "description": "Water bill",
-      "date": "2023-08-30",
-      "cost": 40.0
+      "description": "Furniture purchase",
+      "category": "home",
+      "date": "2023-09-10",
+      "cost": 250
     },
     {
       "id": 23,
-      "category": "Groceries",
-      "description": "Bulk grocery shopping",
-      "date": "2023-08-31",
-      "cost": 80.0
-    },
-    {
-      "id": 24,
-      "category": "Groceries",
-      "description": "Specialty ingredients",
-      "date": "2023-09-01",
-      "cost": 25.0
-    },
-    {
-      "id": 25,
-      "category": "Groceries",
-      "description": "Bakery items",
-      "date": "2023-09-02",
-      "cost": 15.0
-    },
-    {
-      "id": 26,
-      "category": "Groceries",
-      "description": "Fruits and vegetables",
-      "date": "2023-09-03",
-      "cost": 30.0
-    },
-    {
-      "id": 27,
-      "category": "Groceries",
-      "description": "Snacks for the week",
-      "date": "2023-09-04",
-      "cost": 20.0
-    },
-    {
-      "id": 28,
-      "category": "Transportation",
-      "description": "Weekly bus pass",
-      "date": "2023-09-05",
-      "cost": 15.0
-    },
-    {
-      "id": 29,
-      "category": "Transportation",
-      "description": "Rideshare to the airport",
-      "date": "2023-09-06",
-      "cost": 25.0
-    },
-    {
-      "id": 28,
-      "category": "Transportation",
-      "description": "Subway fare",
-      "date": "2023-09-07",
-      "cost": 5.0
-    },
-    {
-      "id": 29,
-      "category": "Transportation",
-      "description": "Car maintenance",
-      "date": "2023-09-08",
-      "cost": 120.0
-    },
-    {
-      "id": 30,
-      "category": "Transportation",
-      "description": "Fuel for road trip",
-      "date": "2023-09-09",
-      "cost": 70.0
+      "description": "Appliance repair",
+      "category": "home",
+      "date": "2023-09-12",
+      "cost": 100
     }
   ]
 }
