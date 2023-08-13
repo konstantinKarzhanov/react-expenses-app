@@ -1,20 +1,33 @@
 import React from "react";
 import useOverlayContext from "../hooks/useOverlayContext";
+import useExpensesContext from "../hooks/useExpensesContext";
 import ExpensesForm from "./ExpensesForm";
 
 const Overlay = () => {
   const { isExpensesEdit } = useOverlayContext();
+  const {
+    editDescriptionInput,
+    editCostInput,
+    editDateInput,
+    editCategoryInput,
+  } = useExpensesContext();
   return (
     <>
       <p>hello i am overlay</p>
       {isExpensesEdit && (
         <ExpensesForm
+          refHandle={{
+            descriptionInput: editDescriptionInput,
+            costInput: editCostInput,
+            dateInput: editDateInput,
+            categoryInput: editCategoryInput,
+          }}
           idHandle={{
-            form: "edit-expenses-form",
-            descriptionInput: "edit-expense-description",
-            costInput: "edit-expense-cost",
-            dateInput: "edit-expense-date",
-            categoryInput: "edit-expense-category",
+            formId: "edit-expenses-form",
+            descriptionInputId: "edit-expense-description",
+            costInputId: "edit-expense-cost",
+            dateInputId: "edit-expense-date",
+            categoryInputId: "edit-expense-category",
           }}
         />
       )}

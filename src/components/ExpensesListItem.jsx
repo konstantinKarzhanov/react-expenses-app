@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
-import useMainContext from "../hooks/useMainContext";
 import useOverlayContext from "../hooks/useOverlayContext";
+import useMainContext from "../hooks/useMainContext";
 import ExpensesDetailsList from "./ExpensesDetailsList";
 import ExpensesButton from "./ExpensesButton";
 
@@ -16,9 +16,10 @@ const ExpensesListItem = ({ idHandle, dataHandle }) => {
     setIsExpensesEdit(!isExpensesEdit);
   };
   const processDelete = (id) => {
-    window.confirm("Are you sure you want to delete this item?") &&
+    if (window.confirm("Are you sure you want to delete this item?")) {
       deleteItem(EXPENSES_URL, id);
-    console.log(`item with id: ${id} has been deleted`);
+      console.log(`item with id: ${id} has been deleted`);
+    }
   };
 
   const handleClick = (event) => {

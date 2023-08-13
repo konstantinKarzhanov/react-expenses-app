@@ -4,10 +4,17 @@ const ExpensesContext = React.createContext();
 
 const ExpensesContextProvider = ({ children }) => {
   const defaultCategory = "uncategorized";
+
   const descriptionInput = useRef();
   const costInput = useRef();
   const dateInput = useRef();
   const categoryInput = useRef();
+
+  const editDescriptionInput = useRef();
+  const editCostInput = useRef();
+  const editDateInput = useRef();
+  const editCategoryInput = useRef();
+
   const [selectedCategory, setSelectedCategory] = useState(defaultCategory);
 
   const clearInput = (...args) =>
@@ -26,6 +33,10 @@ const ExpensesContextProvider = ({ children }) => {
         costInput,
         dateInput,
         categoryInput,
+        editDescriptionInput,
+        editCostInput,
+        editDateInput,
+        editCategoryInput,
         selectedCategory,
         setSelectedCategory,
         clearInput,
