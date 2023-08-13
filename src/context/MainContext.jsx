@@ -10,7 +10,6 @@ const MainContextProvider = ({ children }) => {
 
   const [dataFromAPI, setDataFromAPI] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isOverlayShown, setIsOverlayShown] = useState(false);
   const { setURL, setOptions, data, isLoading, fetchError } = useFetch(API_URL);
 
   useEffect(() => {
@@ -122,8 +121,6 @@ const MainContextProvider = ({ children }) => {
         addItem,
         updateItem,
         deleteItem,
-        isOverlayShown,
-        setIsOverlayShown,
       }}
     >
       {children}

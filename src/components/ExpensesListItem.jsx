@@ -1,16 +1,17 @@
 import React, { useRef } from "react";
 import useMainContext from "../hooks/useMainContext";
+import useOverlayContext from "../hooks/useOverlayContext";
 import ExpensesDetailsList from "./ExpensesDetailsList";
 import ExpensesButton from "./ExpensesButton";
 
 const ExpensesListItem = ({ idHandle, dataHandle }) => {
-  const { EXPENSES_URL, deleteItem, isOverlayShown, setIsOverlayShown } =
-    useMainContext();
+  const { isOverlay, setIsOverlay } = useOverlayContext();
+  const { EXPENSES_URL, deleteItem } = useMainContext();
   const editBtn = useRef();
   const deleteBtn = useRef();
 
   const processEdit = () => {
-    setIsOverlayShown(!isOverlayShown);
+    setIsOverlay(!isOverlay);
   };
   const processDelete = (id) => {
     window.confirm("Are you sure you want to delete this item?") &&
