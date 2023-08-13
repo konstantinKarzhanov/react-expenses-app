@@ -10,7 +10,15 @@ const ExpensesPage = () => {
     <>
       <Header mainTitleHandle="expenses" />
       <Main>
-        <ExpensesForm idHandle="expenses-form" />
+        <ExpensesForm
+          idHandle={{
+            form: "expenses-form",
+            descriptionInput: "expense-description",
+            costInput: "expense-cost",
+            dateInput: "expense-date",
+            categoryInput: "expense-category",
+          }}
+        />
         <ExpensesList />
       </Main>
       <Footer />

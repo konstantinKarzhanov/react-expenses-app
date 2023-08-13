@@ -36,10 +36,10 @@ const ExpensesForm = ({ idHandle }) => {
   };
 
   return (
-    <form id={idHandle} onSubmit={handleSubmit}>
+    <form id={idHandle.form} onSubmit={handleSubmit}>
       <ExpensesInput
         refHandle={descriptionInput}
-        idHandle="expense-description"
+        idHandle={idHandle.descriptionInput}
         nameHandle="description"
         typeHandle="text"
         placeHolderHandle="avadakedavra"
@@ -47,7 +47,7 @@ const ExpensesForm = ({ idHandle }) => {
       />
       <ExpensesInput
         refHandle={costInput}
-        idHandle="expense-cost"
+        idHandle={idHandle.costInput}
         nameHandle="cost"
         typeHandle="number"
         placeHolderHandle="$ 00.00"
@@ -58,14 +58,14 @@ const ExpensesForm = ({ idHandle }) => {
       />
       <ExpensesInput
         refHandle={dateInput}
-        idHandle="expense-date"
+        idHandle={idHandle.dateInput}
         nameHandle="date"
         typeHandle="date"
         required
       />
       <ExpensesSelect
         refHandle={categoryInput}
-        idHandle="expense-category"
+        idHandle={idHandle.categoryInput}
         nameHandle="category"
         required
       />

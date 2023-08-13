@@ -7,7 +7,17 @@ const Overlay = () => {
   return (
     <>
       <p>hello i am overlay</p>
-      {isExpensesEdit && <ExpensesForm idHandle="edit-expense-form" />}
+      {isExpensesEdit && (
+        <ExpensesForm
+          idHandle={{
+            form: "edit-expenses-form",
+            descriptionInput: "edit-expense-description",
+            costInput: "edit-expense-cost",
+            dateInput: "edit-expense-date",
+            categoryInput: "edit-expense-category",
+          }}
+        />
+      )}
     </>
   );
 };
