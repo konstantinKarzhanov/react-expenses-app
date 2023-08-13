@@ -3,9 +3,13 @@ import React, { useState } from "react";
 const OverlayContext = React.createContext();
 
 const OverlayContextProvider = ({ children }) => {
-  const [isOverlay, setIsOverlay] = useState(true);
+  const [isOverlay, setIsOverlay] = useState(false);
+  const [isExpensesEdit, setIsExpensesEdit] = useState(false);
+
   return (
-    <OverlayContext.Provider value={{ isOverlay, setIsOverlay }}>
+    <OverlayContext.Provider
+      value={{ isOverlay, setIsOverlay, isExpensesEdit, setIsExpensesEdit }}
+    >
       {children}
     </OverlayContext.Provider>
   );
