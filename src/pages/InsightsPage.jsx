@@ -1,5 +1,4 @@
 import React from "react";
-import Insights from "../components/Insights";
 import Header from "../components/Header";
 import Main from "../components/Main";
 import { InsightContextProvider } from "../context/InsightsContext";
