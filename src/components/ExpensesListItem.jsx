@@ -1,28 +1,47 @@
 import React, { useRef } from "react";
+import useOverlayContext from "../hooks/useOverlayContext";
 import useMainContext from "../hooks/useMainContext";
+import useExpensesContext from "../hooks/useExpensesContext";
 import ExpensesDetailsList from "./ExpensesDetailsList";
 import ExpensesButton from "./ExpensesButton";
 
 const ExpensesListItem = ({ idHandle, dataHandle }) => {
-  const { EXPENSES_URL, deleteItem } = useMainContext();
+  const { isOverlay, setIsOverlay, isExpensesEdit, setIsExpensesEdit } =
+    useOverlayContext();
+  const { EXPENSES_URL, dataFromAPI, deleteItem } = useMainContext();
+  const { editableId, fillEditForm } = useExpensesContext();
+
   const editBtn = useRef();
   const deleteBtn = useRef();
 
-  const processEdit = () => {};
+  const processEdit = (id) => {
+    setIsOverlay(!isOverlay);
+    setIsExpensesEdit(!isExpensesEdit);
+
+    editableId.current = id;
+
+    const editData = dataFromAPI["expenses"].filter(
+      (item) => item.id === id
+    )[0];
+
+    fillEditForm(editData);
+  };
   const processDelete = (id) => {
-    deleteItem(EXPENSES_URL, id);
-    console.log(`item with id: ${id} has been deleted`);
+    if (window.confirm("Are you sure you want to delete this item?")) {
+      deleteItem(EXPENSES_URL, id);
+      console.log(`item with id: ${id} has been deleted`);
+    }
   };
 
   const handleClick = (event) => {
     const target = event.target.closest("button");
     if (!target) return;
     const parentContainer = target.parentElement;
-    const dataId = +parentContainer.previousElementSibling.id
+    const id = +parentContainer.previousElementSibling.id
       .split("-")
       .slice(-1)[0];
-    target === editBtn.current && processEdit();
-    target === deleteBtn.current && processDelete(dataId);
+    target === editBtn.current && processEdit(id);
+    target === deleteBtn.current && processDelete(id);
   };
 
   return (
