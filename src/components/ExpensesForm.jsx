@@ -21,24 +21,41 @@ const ExpensesForm = ({
     defaultCategory,
   },
 }) => {
-  const { EXPENSES_URL, setIsSubmitted, createItem, addItem } =
+  const { EXPENSES_URL, setIsSubmitted, createItem, addItem, updateItem } =
     useMainContext();
 
-  const { clearForm } = useExpensesContext();
+  const {
+    editableId,
+    editDescriptionInput,
+    editCostInput,
+    editDateInput,
+    editCategoryInput,
+    clearForm,
+  } = useExpensesContext();
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    addItem(
-      EXPENSES_URL,
-      createItem(
-        "expenses",
-        descriptionInput.current,
-        categoryInput.current,
-        dateInput.current,
-        costInput.current
-      )
-    );
+    if (event.target.id.includes("edit")) {
+      updateItem(EXPENSES_URL, editableId.current, {
+        id: editableId.current,
+        [editDescriptionInput.current.name]: editDescriptionInput.current.value,
+        [editCategoryInput.current.name]: editCategoryInput.current.value,
+        [editDateInput.current.name]: editDateInput.current.value,
+        [editCostInput.current.name]: editCostInput.current.value,
+      });
+    } else {
+      addItem(
+        EXPENSES_URL,
+        createItem(
+          "expenses",
+          descriptionInput.current,
+          categoryInput.current,
+          dateInput.current,
+          costInput.current
+        )
+      );
+    }
 
     clearForm(descriptionInput.current, costInput.current, dateInput.current);
     setIsSubmitted(true);

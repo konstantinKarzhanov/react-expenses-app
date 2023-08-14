@@ -9,7 +9,7 @@ const ExpensesListItem = ({ idHandle, dataHandle }) => {
   const { isOverlay, setIsOverlay, isExpensesEdit, setIsExpensesEdit } =
     useOverlayContext();
   const { EXPENSES_URL, dataFromAPI, deleteItem } = useMainContext();
-  const { fillEditForm } = useExpensesContext();
+  const { editableId, fillEditForm } = useExpensesContext();
 
   const editBtn = useRef();
   const deleteBtn = useRef();
@@ -17,9 +17,13 @@ const ExpensesListItem = ({ idHandle, dataHandle }) => {
   const processEdit = (id) => {
     setIsOverlay(!isOverlay);
     setIsExpensesEdit(!isExpensesEdit);
+
+    editableId.current = id;
+
     const editData = dataFromAPI["expenses"].filter(
       (item) => item.id === id
     )[0];
+
     fillEditForm(editData);
   };
   const processDelete = (id) => {

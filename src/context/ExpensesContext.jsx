@@ -8,6 +8,8 @@ const ExpensesContextProvider = ({ children }) => {
   const dateInput = useRef();
   const categoryInput = useRef();
 
+  const editableId = useRef();
+
   const editDescriptionInput = useRef();
   const editCostInput = useRef();
   const editDateInput = useRef();
@@ -37,6 +39,7 @@ const ExpensesContextProvider = ({ children }) => {
         costInput,
         dateInput,
         categoryInput,
+        editableId,
         editDescriptionInput,
         editCostInput,
         editDateInput,
