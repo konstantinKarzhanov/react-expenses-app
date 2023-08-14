@@ -2,9 +2,10 @@ import React from "react";
 import useOverlayContext from "../hooks/useOverlayContext";
 import useExpensesContext from "../hooks/useExpensesContext";
 import ExpensesForm from "./ExpensesForm";
+import NavigationMenu from "./NavigationMenu";
 
 const Overlay = () => {
-  const { isExpensesEdit } = useOverlayContext();
+  const { isExpensesEdit, isMenu } = useOverlayContext();
   const {
     editDescriptionInput,
     editCostInput,
@@ -42,6 +43,7 @@ const Overlay = () => {
           }}
         />
       )}
+      {isMenu && <NavigationMenu />}
     </>
   );
 };

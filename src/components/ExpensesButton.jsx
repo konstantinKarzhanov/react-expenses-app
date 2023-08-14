@@ -1,8 +1,8 @@
 import React from "react";
 
-const ExpensesButton = ({ refHandle, classHandle, children }) => {
+const ExpensesButton = ({ refHandle, handleClick, classHandle, children }) => {
   return (
-    <button ref={refHandle} className={classHandle}>
+    <button ref={refHandle} onClick={handleClick} className={classHandle}>
       {children}
     </button>
   );
