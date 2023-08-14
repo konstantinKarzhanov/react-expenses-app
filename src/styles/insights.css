@@ -1,0 +1,64 @@
+Placeholer CSS for insights and bar graph .insights-container {
+  width: 1000px;
+  box-sizing: border-box;
+}
+
+#header-text {
+  font-family: "Poppins", sans-serif;
+  font-size: 5rem;
+  margin: 1rem;
+}
+
+#sub-header-text {
+  font-family: "Poppins", sans-serif;
+  font-size: 3.5rem;
+  margin: 3rem 15rem;
+  width: 40%;
+}
+
+#category-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow categories to wrap to the next line */
+  margin: 2rem auto; /* Adjust the margin */
+  justify-content: center; /* Center categories */
+  gap: 1rem; /* Add some space between categories */
+}
+
+.data-category {
+  font-family: "Poppins", sans-serif;
+  background-color: rgb(17, 168, 228);
+  color: white;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 8px;
+  font-size: 2rem;
+  text-transform: capitalize;
+}
+
+.cost-container {
+  margin: 5rem auto;
+  background-color: rgb(17, 168, 228);
+  width: 40%;
+  border-radius: 10px;
+  padding: 2rem;
+}
+
+.cost-title {
+  font-family: "Poppins", sans-serif;
+  color: white;
+  text-align: center;
+  padding-bottom: 1.5rem;
+  font-size: 3rem;
+}
+
+.cost-details {
+  font-family: "Poppins", sans-serif;
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.graph-container {
+  margin: auto;
+  width: 70%;
+}
