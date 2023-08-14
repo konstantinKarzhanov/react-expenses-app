@@ -10,7 +10,12 @@ const Overlay = () => {
     editCostInput,
     editDateInput,
     editCategoryInput,
+    editDescriptionDefaultValue,
+    editCostDefaultValue,
+    editDateDefaultValue,
+    editCategoryDefaultValue,
   } = useExpensesContext();
+
   return (
     <>
       <p>hello i am overlay</p>
@@ -28,6 +33,12 @@ const Overlay = () => {
             costInputId: "edit-expense-cost",
             dateInputId: "edit-expense-date",
             categoryInputId: "edit-expense-category",
+          }}
+          valueHandle={{
+            defaultDescription: editDescriptionDefaultValue.current,
+            defaultCost: editCostDefaultValue.current,
+            defaultDate: editDateDefaultValue.current,
+            defaultCategory: editCategoryDefaultValue.current,
           }}
         />
       )}

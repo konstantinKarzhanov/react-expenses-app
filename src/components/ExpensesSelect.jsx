@@ -24,7 +24,7 @@ const ExpensesSelect = ({
       onChange={handleChange}
       id={idHandle}
       name={nameHandle}
-      value={valueHandle}
+      defaultValue={valueHandle}
       required={required}
     >
       {optionArr}

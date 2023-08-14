@@ -14,20 +14,17 @@ const ExpensesForm = ({
     dateInputId,
     categoryInputId,
   },
+  valueHandle: {
+    defaultDescription,
+    defaultCost,
+    defaultDate,
+    defaultCategory,
+  },
 }) => {
   const { EXPENSES_URL, setIsSubmitted, createItem, addItem } =
     useMainContext();
 
-  const { category, setCategory, editCategory, setEditCategory, clearInput } =
-    useExpensesContext();
-
-  const handleChange = (event) => {
-    if (!categoryInputId.includes("edit")) {
-      setCategory(event.target.value);
-    } else {
-      setEditCategory(event.target.value);
-    }
-  };
+  const { clearForm } = useExpensesContext();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -43,12 +40,7 @@ const ExpensesForm = ({
       )
     );
 
-    clearInput(
-      descriptionInput.current,
-      costInput.current,
-      dateInput.current,
-      categoryInput.current
-    );
+    clearForm(descriptionInput.current, costInput.current, dateInput.current);
     setIsSubmitted(true);
   };
 
@@ -58,6 +50,7 @@ const ExpensesForm = ({
         refHandle={descriptionInput}
         idHandle={descriptionInputId}
         nameHandle="description"
+        valueHandle={defaultDescription}
         typeHandle="text"
         placeHolderHandle="avadakedavra"
         required
@@ -66,6 +59,7 @@ const ExpensesForm = ({
         refHandle={costInput}
         idHandle={costInputId}
         nameHandle="cost"
+        valueHandle={defaultCost}
         typeHandle="number"
         placeHolderHandle="$ 00.00"
         minHandle="0"
@@ -77,17 +71,15 @@ const ExpensesForm = ({
         refHandle={dateInput}
         idHandle={dateInputId}
         nameHandle="date"
+        valueHandle={defaultDate}
         typeHandle="date"
         required
       />
       <ExpensesSelect
         refHandle={categoryInput}
-        handleChange={handleChange}
         idHandle={categoryInputId}
         nameHandle="category"
-        valueHandle={
-          !categoryInputId.includes("edit") ? category : editCategory
-        }
+        valueHandle={defaultCategory}
         required
       />
       <ExpensesButton classHandle={"btn--submit"} children="add" />

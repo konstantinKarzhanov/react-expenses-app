@@ -28,6 +28,12 @@ const ExpensesPage = () => {
             dateInputId: "expense-date",
             categoryInputId: "expense-category",
           }}
+          valueHandle={{
+            defaultDescription: "",
+            defaultCost: "",
+            defaultDate: "",
+            defaultCategory: "travel",
+          }}
         />
         <ExpensesList />
       </Main>
