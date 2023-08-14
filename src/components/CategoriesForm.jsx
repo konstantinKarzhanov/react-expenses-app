@@ -2,7 +2,7 @@ import React from "react";
 import useMainContext from "../hooks/useMainContext";
 import useCategoriesContext from "../hooks/useCategoriesContext";
 import ExpensesInput from "./ExpensesInput";
-import ExpensesButton from "./ExpensesButton";
+import Button from "./Button";
 
 const CategoriesForm = () => {
   const { CATEGORIES_URL, createItem, addItem, clearForm } = useMainContext();
@@ -25,7 +25,7 @@ const CategoriesForm = () => {
         placeHolderHandle="avadakedavra"
         required
       />
-      <ExpensesButton classHandle={"btn--submit"} children="add" />
+      <Button classHandle={"btn--submit"} children="add" />
     </form>
   );
 };

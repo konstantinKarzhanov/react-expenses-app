@@ -8,7 +8,7 @@ import useOverlayContext from "./hooks/useOverlayContext";
 import { MainContextProvider } from "./context/MainContext";
 import { ExpensesContextProvider } from "./context/ExpensesContext";
 import Overlay from "./components/Overlay";
-import ExpensesButton from "./components/ExpensesButton";
+import Button from "./components/Button";
 
 // pages
 import ExpensesPage from "./pages/ExpensesPage";
@@ -35,7 +35,7 @@ function App() {
           <Route path="about" element={<AboutPage />}></Route>
           <Route path="*" element={<NotFoundPage />}></Route>
         </Routes>
-        <ExpensesButton
+        <Button
           handleClick={handleClick}
           classHandle="btn--menu"
           children="menu"

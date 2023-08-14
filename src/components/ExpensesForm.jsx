@@ -3,7 +3,7 @@ import useMainContext from "../hooks/useMainContext";
 import useExpensesContext from "../hooks/useExpensesContext";
 import ExpensesInput from "./ExpensesInput";
 import ExpensesSelect from "./ExpensesSelect";
-import ExpensesButton from "./ExpensesButton";
+import Button from "./Button";
 
 const ExpensesForm = ({
   refHandle: { descriptionInput, costInput, dateInput, categoryInput },
@@ -97,7 +97,7 @@ const ExpensesForm = ({
         valueHandle={defaultCategory}
         required
       />
-      <ExpensesButton classHandle={"btn--submit"} children="add" />
+      <Button classHandle={"btn--submit"} children="add" />
     </form>
   );
 };
