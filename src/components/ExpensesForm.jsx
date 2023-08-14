@@ -18,7 +18,16 @@ const ExpensesForm = ({
   const { EXPENSES_URL, setIsSubmitted, createItem, addItem } =
     useMainContext();
 
-  const { clearInput } = useExpensesContext();
+  const { category, setCategory, editCategory, setEditCategory, clearInput } =
+    useExpensesContext();
+
+  const handleChange = (event) => {
+    if (!categoryInputId.includes("edit")) {
+      setCategory(event.target.value);
+    } else {
+      setEditCategory(event.target.value);
+    }
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -73,8 +82,12 @@ const ExpensesForm = ({
       />
       <ExpensesSelect
         refHandle={categoryInput}
+        handleChange={handleChange}
         idHandle={categoryInputId}
         nameHandle="category"
+        valueHandle={
+          !categoryInputId.includes("edit") ? category : editCategory
+        }
         required
       />
       <ExpensesButton classHandle={"btn--submit"} children="add" />

@@ -9,18 +9,20 @@ const ExpensesContextProvider = ({ children }) => {
   const costInput = useRef();
   const dateInput = useRef();
   const categoryInput = useRef();
+  const [category, setCategory] = useState(defaultCategory);
 
   const editDescriptionInput = useRef();
   const editCostInput = useRef();
   const editDateInput = useRef();
   const editCategoryInput = useRef();
-
-  const [selectedCategory, setSelectedCategory] = useState(defaultCategory);
+  const [editCategory, setEditCategory] = useState(defaultCategory);
 
   const clearInput = (...args) =>
     args.forEach((item) => {
       if (item === categoryInput.current) {
-        setSelectedCategory(defaultCategory);
+        setCategory(defaultCategory);
+      } else if (item === editCategoryInput.current) {
+        setEditCategory(defaultCategory);
       } else {
         item.value = item.defaultValue;
       }
@@ -33,12 +35,14 @@ const ExpensesContextProvider = ({ children }) => {
         costInput,
         dateInput,
         categoryInput,
+        category,
+        setCategory,
         editDescriptionInput,
         editCostInput,
         editDateInput,
         editCategoryInput,
-        selectedCategory,
-        setSelectedCategory,
+        editCategory,
+        setEditCategory,
         clearInput,
       }}
     >
