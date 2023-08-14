@@ -3,7 +3,7 @@ import useOverlayContext from "../hooks/useOverlayContext";
 import useMainContext from "../hooks/useMainContext";
 import useExpensesContext from "../hooks/useExpensesContext";
 import ExpensesDetailsList from "./ExpensesDetailsList";
-import ExpensesButton from "./ExpensesButton";
+import Button from "./Button";
 
 const ExpensesListItem = ({ idHandle, dataHandle }) => {
   const { isOverlay, setIsOverlay, isExpensesEdit, setIsExpensesEdit } =
@@ -48,12 +48,12 @@ const ExpensesListItem = ({ idHandle, dataHandle }) => {
     <li>
       <ExpensesDetailsList idHandle={idHandle} dataHandle={dataHandle} />
       <div onClick={handleClick}>
-        <ExpensesButton
+        <Button
           refHandle={editBtn}
           classHandle={"btn--edit"}
           children={"edit"}
         />
-        <ExpensesButton
+        <Button
           refHandle={deleteBtn}
           classHandle={"btn--delete"}
           children={"delete"}

@@ -27,11 +27,6 @@ const ExpensesContextProvider = ({ children }) => {
     editCategoryDefaultValue.current = data["category"];
   };
 
-  const clearForm = (...args) =>
-    args.forEach((item) => {
-      item.value = "";
-    });
-
   return (
     <ExpensesContext.Provider
       value={{
@@ -49,7 +44,6 @@ const ExpensesContextProvider = ({ children }) => {
         editDateDefaultValue,
         editCategoryDefaultValue,
         fillEditForm,
-        clearForm,
       }}
     >
       {children}
