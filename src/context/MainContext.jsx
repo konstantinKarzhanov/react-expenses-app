@@ -5,7 +5,7 @@ const MainContext = React.createContext();
 
 const MainContextProvider = ({ children }) => {
   const API_URL = "http://localhost:5000/db";
-  const CATEGORIES_URL = "http://localhost:5000/expenses";
+  const CATEGORIES_URL = "http://localhost:5000/categories";
   const EXPENSES_URL = "http://localhost:5000/expenses";
 
   const [dataFromAPI, setDataFromAPI] = useState({});
@@ -49,7 +49,7 @@ const MainContextProvider = ({ children }) => {
   };
 
   const createItem = (field, ...args) => ({
-    id: dataFromAPI[field].slice(-1)[0].id + 1,
+    id: dataFromAPI[field].slice(-1)[0]?.id + 1 || 1,
     ...args.reduce((acc, { name, value }) => {
       if (!acc[name]) {
         acc[name] = name !== "cost" ? value : +value;
@@ -113,6 +113,7 @@ const MainContextProvider = ({ children }) => {
     <MainContext.Provider
       value={{
         EXPENSES_URL,
+        CATEGORIES_URL,
         isLoading,
         fetchError,
         dataFromAPI,
