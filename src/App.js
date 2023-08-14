@@ -12,8 +12,9 @@ import ExpensesButton from "./components/ExpensesButton";
 
 // pages
 import ExpensesPage from "./pages/ExpensesPage";
+import CategoriesPage from "./pages/CategoriesPage";
 import NotFoundPage from "./pages/NotFoundPage";
-import AboutPage from './pages/AboutPage';
+import AboutPage from "./pages/AboutPage";
 import InsightsPage from "./pages/InsightsPage";
 
 // styles
@@ -29,8 +30,9 @@ function App() {
         <Routes>
           <Route path="/" element={<ExpensesPage />}></Route>
           <Route path="expenses" element={<ExpensesPage />}></Route>
+          <Route path="categories" element={<CategoriesPage />}></Route>
           <Route path="insights" element={<InsightsPage />}></Route>
-          <Route path="about" element ={<AboutPage />}></Route>
+          <Route path="about" element={<AboutPage />}></Route>
           <Route path="*" element={<NotFoundPage />}></Route>
         </Routes>
         <ExpensesButton
