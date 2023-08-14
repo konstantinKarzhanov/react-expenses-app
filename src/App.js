@@ -1,9 +1,13 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 
+// hooks
+import useOverlayContext from "./hooks/useOverlayContext";
 
 // components
 import { MainContextProvider } from "./context/MainContext";
+import { ExpensesContextProvider } from "./context/ExpensesContext";
+import Overlay from "./components/Overlay";
 
 // pages
 import ExpensesPage from "./pages/ExpensesPage";
@@ -15,15 +19,20 @@ import InsightsPage from "./pages/InsightsPage";
 import "./App.css";
 
 function App() {
+  const { isOverlay } = useOverlayContext();
+
   return (
     <MainContextProvider>
-      <Routes>
-        <Route path="/" element={<ExpensesPage />}></Route>
-        <Route path="expenses" element={<ExpensesPage />}></Route>
-        <Route path="insights" element={<InsightsPage />}></Route>
-        <Route path="about" element ={<AboutPage />}></Route>
-        <Route path="*" element={<NotFoundPage />}></Route>
-      </Routes>
+      <ExpensesContextProvider>
+        {isOverlay && <Overlay />}
+        <Routes>
+          <Route path="/" element={<ExpensesPage />}></Route>
+          <Route path="expenses" element={<ExpensesPage />}></Route>
+          <Route path="insights" element={<InsightsPage />}></Route>
+          <Route path="about" element ={<AboutPage />}></Route>
+          <Route path="*" element={<NotFoundPage />}></Route>
+        </Routes>
+      </ExpensesContextProvider>
     </MainContextProvider>
   );
 }
