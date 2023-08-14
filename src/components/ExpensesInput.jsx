@@ -4,6 +4,7 @@ const ExpensesInput = ({
   refHandle,
   idHandle,
   nameHandle,
+  valueHandle,
   typeHandle,
   placeHolderHandle,
   minHandle,
@@ -16,6 +17,7 @@ const ExpensesInput = ({
       ref={refHandle}
       id={idHandle}
       name={nameHandle}
+      defaultValue={valueHandle}
       type={typeHandle}
       placeholder={placeHolderHandle}
       min={minHandle}
