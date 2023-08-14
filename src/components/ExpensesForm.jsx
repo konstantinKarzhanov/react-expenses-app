@@ -1,7 +1,7 @@
 import React from "react";
 import useMainContext from "../hooks/useMainContext";
 import useExpensesContext from "../hooks/useExpensesContext";
-import ExpensesInput from "./ExpensesInput";
+import Input from "./Input";
 import ExpensesSelect from "./ExpensesSelect";
 import Button from "./Button";
 
@@ -61,7 +61,7 @@ const ExpensesForm = ({
 
   return (
     <form id={formId} onSubmit={handleSubmit}>
-      <ExpensesInput
+      <Input
         refHandle={descriptionInput}
         idHandle={descriptionInputId}
         nameHandle="description"
@@ -70,7 +70,7 @@ const ExpensesForm = ({
         placeHolderHandle="avadakedavra"
         required
       />
-      <ExpensesInput
+      <Input
         refHandle={costInput}
         idHandle={costInputId}
         nameHandle="cost"
@@ -82,7 +82,7 @@ const ExpensesForm = ({
         stepHandle="0.01"
         required
       />
-      <ExpensesInput
+      <Input
         refHandle={dateInput}
         idHandle={dateInputId}
         nameHandle="date"

@@ -1,7 +1,7 @@
 import React from "react";
 import useMainContext from "../hooks/useMainContext";
 import useCategoriesContext from "../hooks/useCategoriesContext";
-import ExpensesInput from "./ExpensesInput";
+import Input from "./Input";
 import Button from "./Button";
 
 const CategoriesForm = () => {
@@ -17,7 +17,7 @@ const CategoriesForm = () => {
 
   return (
     <form id="categories-form" onSubmit={handleSubmit}>
-      <ExpensesInput
+      <Input
         refHandle={descriptionInput}
         idHandle="category-description"
         nameHandle="description"
