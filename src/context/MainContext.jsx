@@ -9,7 +9,6 @@ const MainContextProvider = ({ children }) => {
   const EXPENSES_URL = "http://localhost:5000/expenses";
 
   const [dataFromAPI, setDataFromAPI] = useState({});
-  const [isSubmitted, setIsSubmitted] = useState(false);
   const { setURL, setOptions, data, isLoading, fetchError } = useFetch(API_URL);
 
   useEffect(() => {
@@ -17,11 +16,6 @@ const MainContextProvider = ({ children }) => {
       return { ...prevDataFromAPI, ...data };
     });
   }, [data]);
-
-  useEffect(() => {
-    isSubmitted && console.log("submitted");
-    isSubmitted && setIsSubmitted(false);
-  }, [isSubmitted]);
 
   const postRequest = (url, body) => {
     setURL(url);
@@ -66,8 +60,10 @@ const MainContextProvider = ({ children }) => {
           expenses: [...prevDataFromAPI["expenses"], body],
         };
       } else if (url === CATEGORIES_URL) {
-        // placeholder for the page with categories
-        // return;
+        return {
+          ...prevDataFromAPI,
+          categories: [...prevDataFromAPI["categories"], body],
+        };
       }
     });
 
@@ -109,6 +105,11 @@ const MainContextProvider = ({ children }) => {
     deleteRequest(url, id);
   };
 
+  const clearForm = (...args) =>
+    args.forEach((item) => {
+      item.value = "";
+    });
+
   return (
     <MainContext.Provider
       value={{
@@ -117,11 +118,11 @@ const MainContextProvider = ({ children }) => {
         isLoading,
         fetchError,
         dataFromAPI,
-        setIsSubmitted,
         createItem,
         addItem,
         updateItem,
         deleteItem,
+        clearForm,
       }}
     >
       {children}
