@@ -13,16 +13,7 @@ import InsightsPage from "./pages/InsightsPage";
 import "./App.css";
 
 function App() {
-  return (
-    <MainContextProvider>
-      <Routes>
-        <Route path="/" element={<ExpensesPage />}></Route>
-        <Route path="expenses" element={<ExpensesPage />}></Route>
-        <Route path="*" element={<NotFoundPage />}></Route>
-        <Route path="insights" element={<InsightsPage />}></Route>
-      </Routes>
-    </MainContextProvider>
-  );
+  return <></>;
 }
 
 export default App;
