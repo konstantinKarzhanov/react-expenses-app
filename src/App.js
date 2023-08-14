@@ -3,7 +3,7 @@ import "./App.css";
 
 import { Route, Routes } from "react-router-dom";
 
-import AboutPage from './pages/AboutPage';
+import AboutPage from "./pages/AboutPage";
 import CategoriesPage from "./pages/CategoriesPage";
 import { ExpensesContextProvider } from "./context/ExpensesContext";
 // pages
@@ -29,10 +29,10 @@ function App() {
           <Route path="/" element={<ExpensesPage />}></Route>
           <Route path="expenses" element={<ExpensesPage />}></Route>
           <Route path="insights" element={<InsightsPage />}></Route>
-          <Route path="about" element ={<AboutPage />}></Route>
+          <Route path="about" element={<AboutPage />}></Route>
           <Route path="*" element={<NotFoundPage />}></Route>
-          
-          <Route path="categories" element={<CategoriesPage />}></Route>       </Routes>
+          <Route path="categories" element={<CategoriesPage />}></Route>
+        </Routes>
       </ExpensesContextProvider>
     </MainContextProvider>
   );
