@@ -21,7 +21,7 @@ const ExpensesForm = ({
     defaultCategory,
   },
 }) => {
-  const { EXPENSES_URL, setIsSubmitted, createItem, addItem, updateItem } =
+  const { EXPENSES_URL, createItem, addItem, updateItem, clearForm } =
     useMainContext();
 
   const {
@@ -30,7 +30,6 @@ const ExpensesForm = ({
     editCostInput,
     editDateInput,
     editCategoryInput,
-    clearForm,
   } = useExpensesContext();
 
   const handleSubmit = (event) => {
@@ -58,7 +57,6 @@ const ExpensesForm = ({
     }
 
     clearForm(descriptionInput.current, costInput.current, dateInput.current);
-    setIsSubmitted(true);
   };
 
   return (
