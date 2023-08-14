@@ -18,14 +18,11 @@ function App() {
   return (
     <MainContextProvider>
       <Routes>
-        
         <Route path="/" element={<ExpensesPage />}></Route>
-        <Route path="about" element ={<AboutPage />}></Route>
         <Route path="expenses" element={<ExpensesPage />}></Route>
-        <Route path="*" element={<NotFoundPage />}></Route>
+        <Route path="about" element ={<AboutPage />}></Route>
         <Route path="insights" element={<InsightsPage />}></Route>
-        
-       
+        <Route path="*" element={<NotFoundPage />}></Route>
       </Routes>
     </MainContextProvider>
   );
