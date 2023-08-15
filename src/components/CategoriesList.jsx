@@ -1,20 +1,29 @@
 import React from "react";
 import useMainContext from "../hooks/useMainContext";
+import useExpensesContext from "../hooks/useExpensesContext";
 import CategoriesListItem from "../components/CategoriesListItem";
 
 const CategoriesList = () => {
   const { isLoading, fetchError, dataFromAPI } = useMainContext();
+  const { defaultCategory } = useExpensesContext();
   const renderLoading = () => <p>Please wait, data is loading....</p>;
   const renderError = () => (
     <p>{`${fetchError.name}: ${fetchError.message}`}</p>
   );
   const renderData = () => {
-    if (dataFromAPI["categories"].length > 0) {
+    if (dataFromAPI["categories"].length > 1) {
       return (
         <ul>
-          {dataFromAPI["categories"].map(({ id, description }) => (
-            <CategoriesListItem key={id} idHandle={id} children={description} />
-          ))}
+          {dataFromAPI["categories"].map(({ id, description }) => {
+            if (description !== defaultCategory)
+              return (
+                <CategoriesListItem
+                  key={id}
+                  idHandle={id}
+                  children={description}
+                />
+              );
+          })}
         </ul>
       );
     } else {

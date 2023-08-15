@@ -41,7 +41,7 @@ const ExpensesForm = ({
         [editDescriptionInput.current.name]: editDescriptionInput.current.value,
         [editCategoryInput.current.name]: editCategoryInput.current.value,
         [editDateInput.current.name]: editDateInput.current.value,
-        [editCostInput.current.name]: editCostInput.current.value,
+        [editCostInput.current.name]: +editCostInput.current.value,
       });
     } else {
       addItem(
