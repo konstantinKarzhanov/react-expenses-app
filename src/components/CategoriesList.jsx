@@ -1,6 +1,6 @@
 import React from "react";
 import useMainContext from "../hooks/useMainContext";
-import CategoryListItem from "../components/CategoryListItem";
+import CategoriesListItem from "../components/CategoriesListItem";
 
 const CategoriesList = () => {
   const { isLoading, fetchError, dataFromAPI } = useMainContext();
@@ -13,11 +13,7 @@ const CategoriesList = () => {
       return (
         <ul>
           {dataFromAPI["categories"].map(({ id, description }) => (
-            <CategoryListItem
-              key={id}
-              idHandle={`category-${id}`}
-              children={description}
-            />
+            <CategoriesListItem key={id} idHandle={id} children={description} />
           ))}
         </ul>
       );

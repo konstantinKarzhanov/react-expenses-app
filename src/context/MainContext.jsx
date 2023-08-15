@@ -81,7 +81,6 @@ const MainContextProvider = ({ children }) => {
         };
       } else if (url === CATEGORIES_URL) {
         // placeholder for the page with categories
-        // return;
       }
     });
 
@@ -98,8 +97,12 @@ const MainContextProvider = ({ children }) => {
           ),
         };
       } else if (url === CATEGORIES_URL) {
-        // placeholder for the page with categories
-        // return;
+        return {
+          ...prevDataFromAPI,
+          categories: prevDataFromAPI["categories"].filter(
+            (item) => item.id !== id
+          ),
+        };
       }
     });
     deleteRequest(url, id);
