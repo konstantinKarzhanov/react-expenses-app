@@ -36,17 +36,16 @@ const ExpensesListItem = ({ idHandle, dataHandle }) => {
   const handleClick = (event) => {
     const target = event.target.closest("button");
     if (!target) return;
-    const parentContainer = target.parentElement;
-    const id = +parentContainer.previousElementSibling.id
-      .split("-")
-      .slice(-1)[0];
-    target === editBtn.current && processEdit(id);
-    target === deleteBtn.current && processDelete(id);
+    target === editBtn.current && processEdit(idHandle);
+    target === deleteBtn.current && processDelete(idHandle);
   };
 
   return (
     <li>
-      <ExpensesDetailsList idHandle={idHandle} dataHandle={dataHandle} />
+      <ExpensesDetailsList
+        idHandle={`expense-${idHandle}`}
+        dataHandle={dataHandle}
+      />
       <div onClick={handleClick}>
         <Button
           refHandle={editBtn}
