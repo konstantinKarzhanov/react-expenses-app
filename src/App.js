@@ -21,6 +21,7 @@ import InsightsPage from "./pages/InsightsPage";
 import "./App.css";
 
 function App() {
+
   const { isOverlay, handleClick } = useOverlayContext();
 
   return (

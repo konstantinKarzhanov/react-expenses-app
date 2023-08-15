@@ -75,31 +75,35 @@ const Insights2 = () => {
 
   return (
     <>
-      <div className="insights-container">
-        <div id="sub-header-text">
-          Lets take a look at the categories you spent money on this month
-        </div>
-        <div id="category-container">
-          {categoryDescriptions.map((categoryName, index) => (
-            <div className="data-category" key={index}>
-              {categoryName}
+      <div className="page">
+        <div className="insights-container">
+          <div id="sub-header-text">
+            Lets take a look at the categories you spent money on this month
+          </div>
+          <div id="category-container">
+            {categoryDescriptions.map((categoryName, index) => (
+              <div className="data-category" key={index}>
+                {categoryName}
+              </div>
+            ))}
+          </div>
+          <div id="sub-header-text">
+            Here is a breakdown of your current Spending
+          </div>
+          <div className="cost-container">
+            <div className="cost-title">Your Highest Cost Expense:</div>
+            <div className="cost-details">
+              ${highestCostExpense.cost} for {highestCostExpense.description}
             </div>
-          ))}
-        </div>
-        <div>Here is a breakdown of your current Spending</div>
-        <div className="cost-container">
-          <div className="cost-title">Your Highest Cost Expense:</div>
-          <div className="cost-details">
-            ${highestCostExpense.cost} for {highestCostExpense.description}
           </div>
-        </div>
-        <div className="cost-container">
-          <div className="cost-title">Your Lowest Cost Expense:</div>
-          <div className="cost-details">
-            ${lowestCostExpense.cost} for {lowestCostExpense.description}
+          <div className="cost-container">
+            <div className="cost-title">Your Lowest Cost Expense:</div>
+            <div className="cost-details">
+              ${lowestCostExpense.cost} for {lowestCostExpense.description}
+            </div>
           </div>
+          <BarChart barData={barData} />
         </div>
-        <BarChart barData={barData} />
       </div>
     </>
   );
