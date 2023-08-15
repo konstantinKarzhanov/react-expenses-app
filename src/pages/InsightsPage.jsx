@@ -9,7 +9,7 @@ import "../styles/insights.css";
 const InsightsPage = () => {
   return (
     <>
-      <Header mainTitleHandle="expenses" />
+      <Header idHandle={"header-text"} mainTitleHandle="Expenses Insights" />
       <Main>
         <InsightContextProvider>
           <Insights2 />
