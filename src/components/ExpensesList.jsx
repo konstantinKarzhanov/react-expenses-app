@@ -16,11 +16,7 @@ const ExpensesList = () => {
           {dataFromAPI["expenses"]
             .toSorted(compareFn)
             .map(({ id, ...data }) => (
-              <ExpensesListItem
-                key={id}
-                idHandle={`expense-${id}`}
-                dataHandle={data}
-              />
+              <ExpensesListItem key={id} idHandle={id} dataHandle={data} />
             ))}
         </ul>
       );
