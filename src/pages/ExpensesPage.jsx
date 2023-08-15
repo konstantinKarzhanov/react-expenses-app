@@ -16,7 +16,7 @@ const ExpensesPage = () => {
 
   return (
     <>
-      <Header mainTitleHandle="Expenses" />
+      <Header titleHandle="Expenses" />
       <Main>
         <ExpensesForm
           refHandle={{

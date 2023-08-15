@@ -8,7 +8,7 @@ import CategoriesList from "../components/CategoriesList";
 const CategoriesPage = () => {
   return (
     <>
-      <Header mainTitleHandle="Categories" />
+      <Header titleHandle="Categories" />
       <Main>
         <CategoriesContextProvider>
           <CategoriesForm />
