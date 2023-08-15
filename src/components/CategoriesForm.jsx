@@ -22,7 +22,7 @@ const CategoriesForm = () => {
         idHandle="category-description"
         nameHandle="description"
         typeHandle="text"
-        placeHolderHandle="avadakedavra"
+        placeHolderHandle="category description"
         required
       />
       <Button classHandle={"btn--submit"} children="add" />
