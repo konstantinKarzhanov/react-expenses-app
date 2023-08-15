@@ -7,8 +7,13 @@ import ExpensesForm from "../components/ExpensesForm";
 import ExpensesList from "../components/ExpensesList";
 
 const ExpensesPage = () => {
-  const { descriptionInput, costInput, dateInput, categoryInput } =
-    useExpensesContext();
+  const {
+    defaultCategory,
+    descriptionInput,
+    costInput,
+    dateInput,
+    categoryInput,
+  } = useExpensesContext();
 
   return (
     <>
@@ -32,7 +37,7 @@ const ExpensesPage = () => {
             defaultDescription: "",
             defaultCost: "",
             defaultDate: "",
-            defaultCategory: "travel",
+            defaultCategory: defaultCategory,
           }}
         />
         <ExpensesList />

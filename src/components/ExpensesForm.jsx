@@ -1,9 +1,9 @@
 import React from "react";
 import useMainContext from "../hooks/useMainContext";
 import useExpensesContext from "../hooks/useExpensesContext";
-import ExpensesInput from "./ExpensesInput";
+import Input from "./Input";
 import ExpensesSelect from "./ExpensesSelect";
-import ExpensesButton from "./ExpensesButton";
+import Button from "./Button";
 
 const ExpensesForm = ({
   refHandle: { descriptionInput, costInput, dateInput, categoryInput },
@@ -21,7 +21,7 @@ const ExpensesForm = ({
     defaultCategory,
   },
 }) => {
-  const { EXPENSES_URL, setIsSubmitted, createItem, addItem, updateItem } =
+  const { EXPENSES_URL, createItem, addItem, updateItem, clearForm } =
     useMainContext();
 
   const {
@@ -30,7 +30,6 @@ const ExpensesForm = ({
     editCostInput,
     editDateInput,
     editCategoryInput,
-    clearForm,
   } = useExpensesContext();
 
   const handleSubmit = (event) => {
@@ -42,7 +41,7 @@ const ExpensesForm = ({
         [editDescriptionInput.current.name]: editDescriptionInput.current.value,
         [editCategoryInput.current.name]: editCategoryInput.current.value,
         [editDateInput.current.name]: editDateInput.current.value,
-        [editCostInput.current.name]: editCostInput.current.value,
+        [editCostInput.current.name]: +editCostInput.current.value,
       });
     } else {
       addItem(
@@ -58,21 +57,20 @@ const ExpensesForm = ({
     }
 
     clearForm(descriptionInput.current, costInput.current, dateInput.current);
-    setIsSubmitted(true);
   };
 
   return (
     <form id={formId} onSubmit={handleSubmit}>
-      <ExpensesInput
+      <Input
         refHandle={descriptionInput}
         idHandle={descriptionInputId}
         nameHandle="description"
         valueHandle={defaultDescription}
         typeHandle="text"
-        placeHolderHandle="avadakedavra"
+        placeHolderHandle="expense description"
         required
       />
-      <ExpensesInput
+      <Input
         refHandle={costInput}
         idHandle={costInputId}
         nameHandle="cost"
@@ -84,7 +82,7 @@ const ExpensesForm = ({
         stepHandle="0.01"
         required
       />
-      <ExpensesInput
+      <Input
         refHandle={dateInput}
         idHandle={dateInputId}
         nameHandle="date"
@@ -99,7 +97,7 @@ const ExpensesForm = ({
         valueHandle={defaultCategory}
         required
       />
-      <ExpensesButton classHandle={"btn--submit"} children="add" />
+      <Button classHandle={"btn--submit"} children="add" />
     </form>
   );
 };
