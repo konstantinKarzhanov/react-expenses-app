@@ -67,7 +67,7 @@ const ExpensesForm = ({
         nameHandle="description"
         valueHandle={defaultDescription}
         typeHandle="text"
-        placeHolderHandle="avadakedavra"
+        placeHolderHandle="expense description"
         required
       />
       <Input
