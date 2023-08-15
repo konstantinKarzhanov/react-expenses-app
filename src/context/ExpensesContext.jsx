@@ -3,6 +3,8 @@ import React, { useRef } from "react";
 const ExpensesContext = React.createContext();
 
 const ExpensesContextProvider = ({ children }) => {
+  const defaultCategory = "uncategorized";
+
   const descriptionInput = useRef();
   const costInput = useRef();
   const dateInput = useRef();
@@ -30,6 +32,7 @@ const ExpensesContextProvider = ({ children }) => {
   return (
     <ExpensesContext.Provider
       value={{
+        defaultCategory,
         descriptionInput,
         costInput,
         dateInput,
