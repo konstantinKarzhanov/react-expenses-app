@@ -6,7 +6,7 @@ import "../styles/about.css";
 function About() {
   return (
     <>
-      <Header mainTitleHandle="About" />
+      <Header titleHandle="About" />
       <Main>
         <div className="page">
           <div className="about-container">

@@ -8,7 +8,7 @@ import "../styles/insights.css";
 const InsightsPage = () => {
   return (
     <>
-      <Header mainTitleHandle="Expenses Insights" />
+      <Header titleHandle="Expenses Insights" />
       <Main>
         <InsightContextProvider>
           <Insights2 />
