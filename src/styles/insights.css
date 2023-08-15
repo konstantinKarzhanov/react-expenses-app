@@ -5,7 +5,6 @@
 }
 
 #sub-header-text {
-  font-family: "Poppins", sans-serif;
   font-size: 3.5rem;
   margin: 3rem 15rem;
   width: 40%;
@@ -20,7 +19,6 @@
 }
 
 .data-category {
-  font-family: "Poppins", sans-serif;
   background-color: rgb(17, 168, 228);
   color: white;
   padding: 1rem;
@@ -39,7 +37,6 @@
 }
 
 .cost-title {
-  font-family: "Poppins", sans-serif;
   color: white;
   text-align: center;
   padding-bottom: 1.5rem;
@@ -47,7 +44,6 @@
 }
 
 .cost-details {
-  font-family: "Poppins", sans-serif;
   color: white;
   text-align: center;
   font-size: 2rem;
