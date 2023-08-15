@@ -26,7 +26,7 @@ function App() {
 
   return (
     <>
-      <div className="bg-c--gradient">
+      <div className="container bg-c--gradient">
         <MainContextProvider>
           <ExpensesContextProvider>
             {isOverlay && <Overlay />}
