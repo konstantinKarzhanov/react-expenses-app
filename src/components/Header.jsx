@@ -1,10 +1,10 @@
 import React from "react";
 import MainTitle from "./MainTitle";
 
-const Header = ({ idHandle, mainTitleHandle }) => {
+const Header = ({ mainTitleHandle }) => {
   return (
     <header>
-      <MainTitle idHandle={idHandle} children={mainTitleHandle} />
+      <MainTitle children={mainTitleHandle} />
     </header>
   );
 };

@@ -1,14 +1,21 @@
 import React from "react";
 import { CategoriesContextProvider } from "../context/CategoriesContext";
+import Header from "../components/Header";
+import Main from "../components/Main";
 import CategoriesForm from "../components/CategoriesForm";
 import CategoriesList from "../components/CategoriesList";
 
 const CategoriesPage = () => {
   return (
-    <CategoriesContextProvider>
-      <CategoriesForm />
-      <CategoriesList />
-    </CategoriesContextProvider>
+    <>
+      <Header mainTitleHandle="Categories" />
+      <Main>
+        <CategoriesContextProvider>
+          <CategoriesForm />
+          <CategoriesList />
+        </CategoriesContextProvider>
+      </Main>
+    </>
   );
 };
 

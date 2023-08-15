@@ -2,7 +2,6 @@ import React from "react";
 import useExpensesContext from "../hooks/useExpensesContext";
 import Header from "../components/Header";
 import Main from "../components/Main";
-import Footer from "../components/Footer";
 import ExpensesForm from "../components/ExpensesForm";
 import ExpensesList from "../components/ExpensesList";
 
@@ -17,7 +16,7 @@ const ExpensesPage = () => {
 
   return (
     <>
-      <Header mainTitleHandle="expenses" />
+      <Header mainTitleHandle="Expenses" />
       <Main>
         <ExpensesForm
           refHandle={{
@@ -42,7 +41,6 @@ const ExpensesPage = () => {
         />
         <ExpensesList />
       </Main>
-      <Footer />
     </>
   );
 };

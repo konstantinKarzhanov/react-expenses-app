@@ -7,12 +7,6 @@
   box-sizing: border-box;
 }
 
-#header-text {
-  font-family: "Poppins", sans-serif;
-  font-size: 5rem;
-  margin: 1rem;
-}
-
 .info-text {
   font-family: "Poppins", sans-serif;
   font-size: 2.5rem;
