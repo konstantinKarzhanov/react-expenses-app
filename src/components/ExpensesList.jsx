@@ -4,6 +4,7 @@ import ExpensesListItem from "./ExpensesListItem";
 
 const ExpensesList = () => {
   const { isLoading, fetchError, dataFromAPI } = useMainContext();
+  const compareFn = (a, b) => new Date(b.date) - new Date(a.date);
   const renderLoading = () => <p>Please wait, data is loading....</p>;
   const renderError = () => (
     <p>{`${fetchError.name}: ${fetchError.message}`}</p>
@@ -12,13 +13,11 @@ const ExpensesList = () => {
     if (dataFromAPI["expenses"].length > 0) {
       return (
         <ul>
-          {dataFromAPI["expenses"].map(({ id, ...data }) => (
-            <ExpensesListItem
-              key={id}
-              idHandle={`expense-${id}`}
-              dataHandle={data}
-            />
-          ))}
+          {dataFromAPI["expenses"]
+            .toSorted(compareFn)
+            .map(({ id, ...data }) => (
+              <ExpensesListItem key={id} idHandle={id} dataHandle={data} />
+            ))}
         </ul>
       );
     } else {
