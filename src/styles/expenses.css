@@ -84,3 +84,15 @@
 .btn--delete {
   aspect-ratio: 1;
 }
+
+.btn--submit:hover {
+  background-color: var(--c--accent-1);
+}
+
+.btn--edit:hover {
+  background-color: var(--c--accent-2);
+}
+
+.btn--delete:hover {
+  background-color: var(--c--accent-3);
+}

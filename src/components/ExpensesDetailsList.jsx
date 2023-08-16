@@ -16,7 +16,7 @@ const ExpensesDetailsList = ({ idHandle, dataHandle }) => {
   return (
     <ul
       id={`expense-${idHandle}`}
-      className="expense-details-list grid grid-container grid--ai-c grid--ji-c grid--all-gap"
+      className="expense-details-list grid grid-container grid--ai-c grid--ji-c grid--all-gap text-capital"
     >
       {listArr}
     </ul>

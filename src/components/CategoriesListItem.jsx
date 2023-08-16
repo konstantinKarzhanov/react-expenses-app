@@ -20,7 +20,7 @@ const CategoriesListItem = ({ idHandle, children }) => {
   return (
     <li
       id={`category-${idHandle}`}
-      className="grid grid-container grid-container--categories-list-item grid--ai-c grid--all-gap"
+      className="grid grid-container grid-container--categories-list-item grid--ai-c grid--all-gap text-capital"
     >
       <p className="category-description">{children}</p>
       <Button
