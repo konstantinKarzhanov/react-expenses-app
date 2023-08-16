@@ -26,25 +26,27 @@ function App() {
 
   return (
     <>
-      <MainContextProvider>
-        <ExpensesContextProvider>
-          {isOverlay && <Overlay />}
-          <Routes>
-            <Route path="/" element={<ExpensesPage />}></Route>
-            <Route path="expenses" element={<ExpensesPage />}></Route>
-            <Route path="categories" element={<CategoriesPage />}></Route>
-            <Route path="insights" element={<InsightsPage />}></Route>
-            <Route path="about" element={<AboutPage />}></Route>
-            <Route path="*" element={<NotFoundPage />}></Route>
-          </Routes>
-          <Button
-            handleClick={handleClick}
-            classHandle="btn--menu"
-            children="menu"
-          />
-        </ExpensesContextProvider>
-      </MainContextProvider>
-      <Footer />
+      <div className="container bg-c--gradient">
+        <MainContextProvider>
+          <ExpensesContextProvider>
+            {isOverlay && <Overlay />}
+            <Routes>
+              <Route path="/" element={<ExpensesPage />}></Route>
+              <Route path="expenses" element={<ExpensesPage />}></Route>
+              <Route path="categories" element={<CategoriesPage />}></Route>
+              <Route path="insights" element={<InsightsPage />}></Route>
+              <Route path="about" element={<AboutPage />}></Route>
+              <Route path="*" element={<NotFoundPage />}></Route>
+            </Routes>
+            <Button
+              handleClick={handleClick}
+              classHandle="btn--menu"
+              children="menu"
+            />
+          </ExpensesContextProvider>
+        </MainContextProvider>
+        <Footer />
+      </div>
     </>
   );
 }

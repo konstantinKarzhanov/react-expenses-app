@@ -60,7 +60,11 @@ const ExpensesForm = ({
   };
 
   return (
-    <form id={formId} onSubmit={handleSubmit}>
+    <form
+      id={formId}
+      className="grid grid-container grid-container--expenses grid--all-gap"
+      onSubmit={handleSubmit}
+    >
       <Input
         refHandle={descriptionInput}
         idHandle={descriptionInputId}
