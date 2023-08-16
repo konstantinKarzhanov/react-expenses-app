@@ -2,17 +2,21 @@ import React from "react";
 import useExpensesContext from "../hooks/useExpensesContext";
 import Header from "../components/Header";
 import Main from "../components/Main";
-import Footer from "../components/Footer";
 import ExpensesForm from "../components/ExpensesForm";
 import ExpensesList from "../components/ExpensesList";
 
 const ExpensesPage = () => {
-  const { descriptionInput, costInput, dateInput, categoryInput } =
-    useExpensesContext();
+  const {
+    defaultCategory,
+    descriptionInput,
+    costInput,
+    dateInput,
+    categoryInput,
+  } = useExpensesContext();
 
   return (
     <>
-      <Header mainTitleHandle="expenses" />
+      <Header titleHandle="Expenses" />
       <Main>
         <ExpensesForm
           refHandle={{
@@ -32,12 +36,11 @@ const ExpensesPage = () => {
             defaultDescription: "",
             defaultCost: "",
             defaultDate: "",
-            defaultCategory: "travel",
+            defaultCategory: defaultCategory,
           }}
         />
         <ExpensesList />
       </Main>
-      <Footer />
     </>
   );
 };

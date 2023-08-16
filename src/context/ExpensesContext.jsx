@@ -3,6 +3,8 @@ import React, { useRef } from "react";
 const ExpensesContext = React.createContext();
 
 const ExpensesContextProvider = ({ children }) => {
+  const defaultCategory = "uncategorized";
+
   const descriptionInput = useRef();
   const costInput = useRef();
   const dateInput = useRef();
@@ -27,14 +29,10 @@ const ExpensesContextProvider = ({ children }) => {
     editCategoryDefaultValue.current = data["category"];
   };
 
-  const clearForm = (...args) =>
-    args.forEach((item) => {
-      item.value = "";
-    });
-
   return (
     <ExpensesContext.Provider
       value={{
+        defaultCategory,
         descriptionInput,
         costInput,
         dateInput,
@@ -49,7 +47,6 @@ const ExpensesContextProvider = ({ children }) => {
         editDateDefaultValue,
         editCategoryDefaultValue,
         fillEditForm,
-        clearForm,
       }}
     >
       {children}

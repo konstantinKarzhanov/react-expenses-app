@@ -77,7 +77,6 @@ const Insights2 = () => {
     <>
       <div className="page">
         <div className="insights-container">
-          <h1 id="header-text">Expenses Insights</h1>
           <div id="sub-header-text">
             Lets take a look at the categories you spent money on this month
           </div>

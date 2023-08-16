@@ -1,6 +1,6 @@
 import React from "react";
 
-const ExpensesButton = ({ refHandle, handleClick, classHandle, children }) => {
+const Button = ({ refHandle, handleClick, classHandle, children }) => {
   return (
     <button ref={refHandle} onClick={handleClick} className={classHandle}>
       {children}
@@ -8,4 +8,4 @@ const ExpensesButton = ({ refHandle, handleClick, classHandle, children }) => {
   );
 };
 
-export default ExpensesButton;
+export default Button;
