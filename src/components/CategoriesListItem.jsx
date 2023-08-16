@@ -1,4 +1,5 @@
 import React from "react";
+import { FiTrash2 } from "react-icons/fi";
 import useMainContext from "../hooks/useMainContext";
 import Button from "./Button";
 
@@ -17,12 +18,15 @@ const CategoriesListItem = ({ idHandle, children }) => {
   };
 
   return (
-    <li id={`category-${idHandle}`}>
-      <p>{children}</p>
+    <li
+      id={`category-${idHandle}`}
+      className="grid grid-container grid-container--categories-list-item grid--ai-c grid--all-gap"
+    >
+      <p className="category-description">{children}</p>
       <Button
         handleClick={handleClick}
-        classHandle={"btn--delete"}
-        children={"delete"}
+        classHandle={"btn--delete flex flex--ai-c flex--jc-c"}
+        children={<FiTrash2 size={24} title={"delete"} />}
       />
     </li>
   );

@@ -1,10 +1,20 @@
 .grid-container--expenses {
-  --grid--col: 1fr 1fr 1fr minmax(0.625rem, 8rem);
+  --grid--col: 1fr 1fr 1fr minmax(0.625rem, 7.5rem);
   --grid--row: 1fr 1fr;
+}
+
+.grid-container--categories {
+  --grid--col: 1fr 1fr 1fr minmax(0.625rem, 3.5rem);
+  --grid--row: 1fr;
+}
+
+.grid-container--expenses,
+.grid-container--categories {
   --gap: 0.5rem;
 }
 
-.grid-container--expenses > * {
+.grid-container--expenses > *,
+#category-description {
   padding: 0.625rem;
 }
 
@@ -28,18 +38,35 @@
   grid-column: 2 / 4;
 }
 
+#category-description {
+  grid-column: 1 / 4;
+}
+
 .grid-container--expenses .btn--submit {
   grid-row: 1 / 3;
+}
+
+.grid-container--expenses .btn--submit,
+.grid-container--categories .btn--submit {
   grid-column: 4 / 5;
 }
 
-.grid-container--expenses-list-item {
-  --grid--col: minmax(10rem, 20rem) 1fr 1fr minmax(3rem, 8rem);
+.grid-container--expenses-list-item,
+.grid-container--categories-list-item {
   --grid--row: 1fr;
   --gap: 0.5rem;
 }
 
-.expense-details-list {
+.grid-container--expenses-list-item {
+  --grid--col: minmax(10rem, 20rem) 1fr 1fr minmax(3rem, 7.5rem);
+}
+
+.grid-container--categories-list-item {
+  --grid--col: minmax(10rem, 20rem) 1fr 1fr minmax(3rem, 3.5rem);
+}
+
+.expense-details-list,
+.category-description {
   grid-column: 1 / 4;
 }
 
@@ -47,7 +74,8 @@
   grid-column: 4 / 5;
 }
 
-.expense-description {
+.expense-description,
+.category-description {
   justify-self: start;
 }
 
