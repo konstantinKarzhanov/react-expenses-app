@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import Main from "../components/Main";
 import ExpensesForm from "../components/ExpensesForm";
 import ExpensesList from "../components/ExpensesList";
+import "../styles/expenses.css";
 
 const ExpensesPage = () => {
   const {
@@ -17,7 +18,7 @@ const ExpensesPage = () => {
   return (
     <>
       <Header titleHandle="Expenses" />
-      <Main>
+      <Main classHandle="container container--80 flow-spacing--s">
         <ExpensesForm
           refHandle={{
             descriptionInput,

@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { FiEdit, FiTrash2 } from "react-icons/fi";
 import useOverlayContext from "../hooks/useOverlayContext";
 import useMainContext from "../hooks/useMainContext";
 import useExpensesContext from "../hooks/useExpensesContext";
@@ -41,21 +42,18 @@ const ExpensesListItem = ({ idHandle, dataHandle }) => {
   };
 
   return (
-    <li>
-      <ExpensesDetailsList
-        idHandle={`expense-${idHandle}`}
-        dataHandle={dataHandle}
-      />
-      <div onClick={handleClick}>
+    <li className="grid grid-container grid-container--expenses-list-item grid--ai-c grid--all-gap">
+      <ExpensesDetailsList idHandle={idHandle} dataHandle={dataHandle} />
+      <div onClick={handleClick} className="btn--container flex flex--gap">
         <Button
           refHandle={editBtn}
-          classHandle={"btn--edit"}
-          children={"edit"}
+          classHandle={"btn--edit flex-50 flex flex--ai-c flex--jc-c"}
+          children={<FiEdit size={24} title={"edit"} />}
         />
         <Button
           refHandle={deleteBtn}
-          classHandle={"btn--delete"}
-          children={"delete"}
+          classHandle={"btn--delete flex-50 flex flex--ai-c flex--jc-c"}
+          children={<FiTrash2 size={24} title={"delete"} />}
         />
       </div>
     </li>

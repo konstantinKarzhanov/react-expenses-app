@@ -33,6 +33,9 @@
 
   /* border-radius */
   --radius: 0.5rem;
+
+  /* dimensions */
+  --container-width: 90rem;
 }
 
 /* --------------- */
@@ -52,6 +55,34 @@
   grid-template-rows: var(--grid--row);
 }
 
+.grid--ai-c {
+  align-items: center;
+}
+
+.grid--ji-s {
+  justify-items: start;
+}
+
+.grid--ji-c {
+  justify-items: center;
+}
+
+.grid--ji-e {
+  justify-items: end;
+}
+
+.grid--js-s {
+  justify-self: start;
+}
+
+.grid--js-c {
+  justify-self: center;
+}
+
+.grid--js-e {
+  justify-self: end;
+}
+
 .grid--all-gap {
   gap: var(--gap);
 }
@@ -61,8 +92,20 @@
   display: flex;
 }
 
+.flex--ai-c {
+  align-items: center;
+}
+
+.flex--jc-c {
+  justify-content: center;
+}
+
 .flex--jc-sb {
   justify-content: space-between;
+}
+
+.flex-50 {
+  flex: 1 1 50%;
 }
 
 .flex--gap {
@@ -123,8 +166,11 @@
 /* containers */
 .container {
   margin: 0 auto;
-  max-width: 90rem;
-  border: 1px solid var(--c--accent-1);
+  max-width: var(--container-width);
+}
+
+.container--80 {
+  --container-width: 80%;
 }
 
 .container--px {
@@ -158,5 +204,5 @@
 
 .header-text {
   font-size: 5rem;
-  margin: 1rem;
+  margin-bottom: 1rem;
 }

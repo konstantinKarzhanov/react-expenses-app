@@ -9,7 +9,7 @@ const CategoriesPage = () => {
   return (
     <>
       <Header titleHandle="Categories" />
-      <Main>
+      <Main classHandle="container container--80">
         <CategoriesContextProvider>
           <CategoriesForm />
           <CategoriesList />
