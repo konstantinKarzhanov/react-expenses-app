@@ -22,14 +22,18 @@ import InsightsPage from "./pages/InsightsPage";
 import "./App.css";
 
 function App() {
+  const body = document.querySelector("body");
   const { isOverlay, handleClick } = useOverlayContext();
+
+  body.dataset.blockedScroll = isOverlay;
 
   return (
     <>
+      <div className="overlap" {...(isOverlay && { "data-active": "" })}></div>
       <div className="container bg-c--gradient">
         <MainContextProvider>
           <ExpensesContextProvider>
-            {isOverlay && <Overlay />}
+            <Overlay />
             <Routes>
               <Route path="/" element={<ExpensesPage />}></Route>
               <Route path="expenses" element={<ExpensesPage />}></Route>

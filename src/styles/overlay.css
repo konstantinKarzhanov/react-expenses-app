@@ -1,0 +1,62 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  z-index: 3;
+  width: 85vw;
+  height: 100vh;
+  background-color: var(--c--bg-overlay-1);
+  transition: right 400ms ease-in-out;
+  overflow: scroll;
+}
+
+.overlay[data-active] {
+  right: 0;
+}
+
+@supports (
+  (-webkit-backdrop-filter: blur(1.25rem)) or (backdrop-filter: blur(1.25rem))
+) {
+  .overlay {
+    background-color: var(--c--bg-overlay-2);
+    -webkit-backdrop-filter: blur(1.25rem);
+    backdrop-filter: blur(1.25rem);
+  }
+}
+
+/* .overlay h2 {
+  border-bottom: 1px solid var(--c--accent-1);
+} */
+
+/* .overlay ul {
+  padding-left: 1.5rem;
+} */
+
+/* .overlay > * {
+  --pad-x: 0.625rem;
+  --pad-y: 0.625rem;
+} */
+
+.btn--menu {
+  --pos: 2rem;
+  padding-block: 1.5em;
+  padding-inline: 3em;
+  position: fixed;
+  left: var(--pos);
+  bottom: var(--pos);
+  /* transition: all 200ms ease-in-out; */
+  z-index: 4;
+  cursor: pointer;
+}
+
+/* .btn--menu:hover {
+} */
+
+/* .btn--menu[data-active-menu] {
+} */
+
+/* .btn--menu[data-active-menu] {
+} */
+
+/* .btn--menu[data-active-menu]:hover {
+} */

@@ -36,6 +36,7 @@
 #expense-category,
 #edit-expense-category {
   grid-column: 2 / 4;
+  cursor: pointer;
 }
 
 #category-description {
@@ -83,6 +84,7 @@
 .btn--edit,
 .btn--delete {
   aspect-ratio: 1;
+  cursor: pointer;
 }
 
 .btn--submit:hover {
