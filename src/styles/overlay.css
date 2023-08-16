@@ -49,14 +49,16 @@
   cursor: pointer;
 }
 
-/* .btn--menu:hover {
+.btn--menu:hover {
+  background-color: var(--c--accent-1);
+}
+
+.btn--menu[data-visible-menu] {
+  background-color: var(--c--accent-2);
+}
+
+/* .btn--menu[data-visible-menu] {
 } */
 
-/* .btn--menu[data-active-menu] {
-} */
-
-/* .btn--menu[data-active-menu] {
-} */
-
-/* .btn--menu[data-active-menu]:hover {
+/* .btn--menu[data-visible-menu]:hover {
 } */

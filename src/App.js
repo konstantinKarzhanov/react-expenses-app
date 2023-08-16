@@ -45,7 +45,8 @@ function App() {
             <Button
               handleClick={handleClick}
               classHandle="btn--menu"
-              children="menu"
+              datasetValue={isOverlay && "data-visible-menu"}
+              children={!isOverlay ? "menu" : "close"}
             />
           </ExpensesContextProvider>
         </MainContextProvider>
