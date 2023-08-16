@@ -16,7 +16,11 @@ const CategoriesForm = () => {
   };
 
   return (
-    <form id="categories-form" onSubmit={handleSubmit}>
+    <form
+      id="categories-form"
+      className="grid grid-container grid-container--categories grid--all-gap"
+      onSubmit={handleSubmit}
+    >
       <Input
         refHandle={descriptionInput}
         idHandle="category-description"

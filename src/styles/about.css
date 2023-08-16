@@ -1,14 +1,9 @@
-.page {
-  background-image: linear-gradient(rgb(122, 225, 239), white);
-}
-
 .about-container {
   max-width: 1400px;
   box-sizing: border-box;
 }
 
 .info-text {
-  font-family: "Poppins", sans-serif;
   font-size: 2.5rem;
   margin: 3rem 1rem;
 }
