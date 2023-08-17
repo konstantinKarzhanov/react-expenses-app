@@ -7,7 +7,7 @@ import ExpensesDetailsList from "./ExpensesDetailsList";
 import Button from "./Button";
 
 const ExpensesListItem = ({ idHandle, dataHandle }) => {
-  const { isOverlay, setIsOverlay, isExpensesEdit, setIsExpensesEdit } =
+  const { isOverlay, setIsOverlay, setIsExpensesEdit, setIsMenu } =
     useOverlayContext();
   const { EXPENSES_URL, dataFromAPI, deleteItem } = useMainContext();
   const { editableId, fillEditForm } = useExpensesContext();
@@ -16,8 +16,13 @@ const ExpensesListItem = ({ idHandle, dataHandle }) => {
   const deleteBtn = useRef();
 
   const processEdit = (id) => {
+    if (!isOverlay) {
+      setIsExpensesEdit(true);
+    } else if (isOverlay) {
+      setIsExpensesEdit(false);
+      setIsMenu(false);
+    }
     setIsOverlay(!isOverlay);
-    setIsExpensesEdit(!isExpensesEdit);
 
     editableId.current = id;
 
