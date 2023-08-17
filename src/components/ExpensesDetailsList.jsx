@@ -1,6 +1,7 @@
 import React from "react";
 import ExpensesDetailsListItem from "./ExpensesDetailsListItem";
 import currencyFormatter from "../utils/currencyFormatter";
+import dateFormatter from "../utils/dateFormatter";
 
 const ExpensesDetailsList = ({ idHandle, dataHandle }) => {
   const listArr = Object.entries(dataHandle).map(([key, value], index) => (
@@ -8,7 +9,11 @@ const ExpensesDetailsList = ({ idHandle, dataHandle }) => {
       key={index}
       classHandle={`expense-${key}`}
       children={
-        typeof value !== "number" ? value : `${currencyFormatter.format(value)}`
+        typeof value === "number"
+          ? currencyFormatter(value)
+          : key === "date"
+          ? dateFormatter(value)
+          : value
       }
     />
   ));
