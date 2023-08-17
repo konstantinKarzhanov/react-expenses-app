@@ -8,8 +8,13 @@ const OverlayContextProvider = ({ children }) => {
   const [isMenu, setIsMenu] = useState(false);
 
   const handleClick = () => {
+    if (!isOverlay) {
+      setIsMenu(true);
+    } else if (isOverlay) {
+      setIsExpensesEdit(false);
+      setIsMenu(false);
+    }
     setIsOverlay(!isOverlay);
-    setIsMenu(!isMenu);
   };
 
   return (

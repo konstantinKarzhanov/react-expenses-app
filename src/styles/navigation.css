@@ -1,0 +1,10 @@
+.navigation-list a {
+  color: currentColor;
+  border-bottom: 1px solid transparent;
+  transition: color 200ms ease-in-out, border-bottom 300ms ease-in-out;
+}
+
+.navigation-list .active {
+  color: var(--c--accent-4);
+  border-bottom: var(--dashed-1);
+}

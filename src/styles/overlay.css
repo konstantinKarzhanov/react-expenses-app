@@ -1,0 +1,36 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  z-index: 3;
+  width: 85vw;
+  height: 100vh;
+  background-color: var(--c--bg-overlay-1);
+  transition: right 300ms ease-in-out;
+  overflow: scroll;
+}
+
+.overlay[data-active] {
+  right: 0;
+}
+
+@supports (
+  (-webkit-backdrop-filter: blur(1.25rem)) or (backdrop-filter: blur(1.25rem))
+) {
+  .overlay {
+    background-color: var(--c--bg-overlay-2);
+    -webkit-backdrop-filter: blur(1.25rem);
+    backdrop-filter: blur(1.25rem);
+  }
+
+  .btn--menu {
+    -webkit-backdrop-filter: blur(1.25rem);
+    backdrop-filter: blur(1.25rem);
+  }
+}
+
+.overlay > * {
+  margin: 0 auto;
+  padding-block: var(--pad-y);
+  max-width: 80%;
+}

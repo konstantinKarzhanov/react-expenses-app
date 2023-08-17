@@ -23,6 +23,7 @@ const ExpensesSelect = ({
       ref={refHandle}
       onChange={handleChange}
       id={idHandle}
+      className="fancy--element"
       name={nameHandle}
       defaultValue={valueHandle}
       required={required}

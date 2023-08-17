@@ -3,9 +3,10 @@ import useOverlayContext from "../hooks/useOverlayContext";
 import useExpensesContext from "../hooks/useExpensesContext";
 import ExpensesForm from "./ExpensesForm";
 import NavigationMenu from "./NavigationMenu";
+import "../styles/overlay.css";
 
 const Overlay = () => {
-  const { isExpensesEdit, isMenu } = useOverlayContext();
+  const { isOverlay, isExpensesEdit, isMenu } = useOverlayContext();
   const {
     editDescriptionInput,
     editCostInput,
@@ -18,8 +19,7 @@ const Overlay = () => {
   } = useExpensesContext();
 
   return (
-    <>
-      <p>hello i am overlay</p>
+    <div className="overlay" {...(isOverlay && { "data-active": "" })}>
       {isExpensesEdit && (
         <ExpensesForm
           refHandle={{
@@ -44,7 +44,7 @@ const Overlay = () => {
         />
       )}
       {isMenu && <NavigationMenu />}
-    </>
+    </div>
   );
 };
 
