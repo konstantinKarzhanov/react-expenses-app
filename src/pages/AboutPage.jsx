@@ -15,17 +15,21 @@ function About() {
             and categorize them so the user can see how much of their budget is
             currently used and what it has been spent on so far.
           </p>
-          <p className="info-text">
+          <div className="info-text">
             Code Authors:
             <ul>
               <li className="list-item">
                 <p className="list-name">Matthew Davis</p>
-                <p className="list-info">Created Insights Page</p>
+                <p className="list-info">
+                  Created Insights Page and Context file for Insights Page.
+                  Styled Insights Page. Wrote Tests for the app
+                </p>
               </li>
               <li className="list-item">
                 <p className="list-name">Kostiantyn Karzhanov</p>
                 <p className="list-info">
-                  Created Custom Hooks, Context Pages, and Expenses Main Page
+                  Created Expenses Page, Custom Hooks, Context files and
+                  Navigation Menu. Styled Expenses and Categories Pages.
                 </p>
               </li>
               <li className="list-item">
@@ -39,16 +43,11 @@ function About() {
                 </p>
               </li>
             </ul>
-          </p>
+          </div>
         </div>
       </Main>
     </>
   );
 }
 
-{
-  /* <li>Kostiantyn Karzhanov</li>
-<li>Raymond Payne</li>
-<li>Michael Sheridan</li> */
-}
 export default About;
