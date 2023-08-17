@@ -12,7 +12,7 @@ const NavigationMenu = () => {
     </li>
   ));
   return (
-    <ul className="navigation-list container container--80 container--pall fs--m text-capital fancy--text">
+    <ul className="navigation-list container--px fs--m text-capital fancy--text">
       {navList}
     </ul>
   );

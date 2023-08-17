@@ -231,10 +231,10 @@
   padding-inline: var(--pad-x);
   padding-block: var(--pad-y);
 }
-/* 
+
 .container--px {
   padding-inline: var(--pad-x);
-} */
+}
 
 /* .container--py {
   padding-block: var(--pad-y);
