@@ -161,6 +161,10 @@
   text-transform: capitalize;
 }
 
+.text-center {
+  text-align: center;
+}
+
 /* font-family */
 /* .ff-sans-normal {
   font-family: var(--ff-sans-normal);
@@ -236,9 +240,9 @@
   padding-inline: var(--pad-x);
 }
 
-/* .container--py {
+.container--py {
   padding-block: var(--pad-y);
-} */
+}
 
 /* fancy styles */
 .fancy--text {
