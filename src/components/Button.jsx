@@ -11,7 +11,7 @@ const Button = ({
     <button
       ref={refHandle}
       onClick={handleClick}
-      className={classHandle}
+      className={`${classHandle} fw--400 fancy--element`}
       {...(datasetValue ? { [datasetValue]: "" } : {})}
     >
       {children}

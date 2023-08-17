@@ -20,7 +20,6 @@ const Overlay = () => {
 
   return (
     <div className="overlay" {...(isOverlay && { "data-active": "" })}>
-      <p>hello i am overlay</p>
       {isExpensesEdit && (
         <ExpensesForm
           refHandle={{

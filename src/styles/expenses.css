@@ -36,7 +36,6 @@
 #expense-category,
 #edit-expense-category {
   grid-column: 2 / 4;
-  cursor: pointer;
 }
 
 #category-description {
@@ -68,6 +67,7 @@
 
 .expense-details-list,
 .category-description {
+  padding-left: var(--gap);
   grid-column: 1 / 4;
 }
 
@@ -80,21 +80,14 @@
   justify-self: start;
 }
 
-.btn--submit,
-.btn--edit,
-.btn--delete {
-  aspect-ratio: 1;
-  cursor: pointer;
-}
-
-.btn--submit:hover {
-  background-color: var(--c--accent-1);
-}
-
-.btn--edit:hover {
-  background-color: var(--c--accent-2);
-}
-
-.btn--delete:hover {
-  background-color: var(--c--accent-3);
+#expense-description:focus,
+#edit-expense-description:focus,
+#expense-cost:focus,
+#edit-expense-cost:focus,
+#expense-date:focus,
+#edit-expense-date:focus,
+#expense-category:focus,
+#edit-expense-category:focus,
+#category-description:focus {
+  background-color: var(--c--accent-4);
 }

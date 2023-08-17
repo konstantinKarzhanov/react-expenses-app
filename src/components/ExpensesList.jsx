@@ -12,7 +12,7 @@ const ExpensesList = () => {
   const renderData = () => {
     if (dataFromAPI["expenses"].length > 0) {
       return (
-        <ul className="flow-spacing--xs">
+        <ul className="expenses-list flow-spacing--xs">
           {dataFromAPI["expenses"]
             .toSorted(compareFn)
             .map(({ id, ...data }) => (

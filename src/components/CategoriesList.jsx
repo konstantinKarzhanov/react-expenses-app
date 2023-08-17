@@ -13,7 +13,7 @@ const CategoriesList = () => {
   const renderData = () => {
     if (dataFromAPI["categories"].length > 1) {
       return (
-        <ul className="flow-spacing--xs">
+        <ul className="categories-list flow-spacing--xs">
           {dataFromAPI["categories"].map(({ id, description }) => {
             if (description !== defaultCategory)
               return (

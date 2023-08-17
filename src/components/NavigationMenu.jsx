@@ -1,8 +1,21 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
+import "../styles/navigation.css";
 
 const NavigationMenu = () => {
-  console.log("hello I am Navigation Menu");
-  return <p>hello I am Navigation Menu</p>;
+  const navMenuArr = ["expenses", "categories", "insights", "about"];
+  const navList = navMenuArr.map((item, index) => (
+    <li key={index} className="pad">
+      <NavLink to={item} className="d-block">
+        {item}
+      </NavLink>
+    </li>
+  ));
+  return (
+    <ul className="navigation-list container container--80 container--pall fs--m text-capital fancy--text">
+      {navList}
+    </ul>
+  );
 };
 
 export default NavigationMenu;

@@ -5,23 +5,38 @@
   /* fonts */
   --ff-sans-normal: "Poppins", sans-serif;
 
+  /* font-sizes */
+  /* --f--3xs: 0.875rem; */
+  /* --f--xxs: 1rem; */
+  /* --f--xs: 1.25rem; */
+  /* --f--s: 1.5rem; */
+  --f--m: 2rem;
+  /* --f--l: 3rem; */
+  /* --f--xl: 4rem; */
+  /* --f--xxl: 5rem; */
+  --f--3xl: 6rem;
+
   /* font-weight */
-  /* --fw--400: 400;
-  --fw--600: 600; */
+  --fw--400: 400;
+  /* --fw--600: 600; */
 
   /* spacing */
   --pad-x: 3rem;
   --pad-y: 3rem;
-  /* --pad: 1em; */
+  --pad: 1em;
   --flow-space--xs: 0.625rem;
   --flow-space--s: 1rem;
   /* --flow-space--m: 1.25rem; */
   --gap: 1rem;
 
   /* colors */
-  --c--accent-1: rgb(228 255 199);
-  --c--accent-2: rgb(255, 244, 199);
-  --c--accent-3: rgb(255 199 199);
+  --c--accent-1: rgba(167, 255, 73, 0.8);
+  --c--accent-2: rgba(255, 255, 72, 0.8);
+  --c--accent-3: rgba(255, 72, 72, 0.8);
+  --c--accent-4: rgba(255, 0, 255, 0.2);
+  --c--li-hover: rgba(0, 216, 247, 0.2);
+  --c--fancy-fill: transparent;
+  --c--fancy-stroke: rgba(0, 0, 0, 0.9);
   --c--bg-overlay-1: rgba(12, 14, 24, 0.9);
   --c--bg-overlay-2: rgba(255, 255, 255, 0.5);
   --c--bg-gradient: linear-gradient(rgb(122, 225, 239), white);
@@ -30,19 +45,22 @@
   --grid--col: auto;
   --grid--row: auto;
 
-  /* border-radius */
-  /* --radius: 0.5rem; */
-
   /* dimensions */
   --container-width: 90rem;
+
+  /* borders */
+  --dashed-1: 1px dashed currentColor;
+
+  /* border-radius */
+  /* --radius: 0.5rem; */
 }
 
 /* --------------- */
 /* Utility classes */
 /* --------------- */
-/* .d-block {
+.d-block {
   display: block;
-} */
+}
 
 /* grid */
 .grid {
@@ -112,9 +130,9 @@
 }
 
 /* padding */
-/* .pad {
+.pad {
   padding: var(--pad);
-} */
+}
 
 /* spacing */
 .flow-spacing--xs > * + * {
@@ -129,6 +147,15 @@
   margin-top: var(--flow-space--m);
 } */
 
+/* margins */
+/* .m--0 {
+  margin: 0;
+} */
+
+.mb--1 {
+  margin-bottom: 1rem;
+}
+
 /* typography */
 .text-capital {
   text-transform: capitalize;
@@ -139,12 +166,49 @@
   font-family: var(--ff-sans-normal);
 } */
 
+/* font size */
+/* .fs--3xs {
+  font-size: var(--f--3xs);
+} */
+
+/* .fs--xxs {
+  font-size: var(--f--xxs);
+} */
+
+/* .fs--xs {
+  font-size: var(--f--xs);
+} */
+
+/* .fs--s {
+  font-size: var(--f--s);
+} */
+
+.fs--m {
+  font-size: var(--f--m);
+}
+/* 
+.fs--l {
+  font-size: var(--f--l);
+} */
+/* 
+.fs--xl {
+  font-size: var(--f--xl);
+} */
+
+/* .fs--xxl {
+  font-size: var(--f--xxl);
+} */
+
+.fs--3xl {
+  font-size: var(--f--3xl);
+}
+
 /* font weight */
-/* .fw--400 {
+.fw--400 {
   font-weight: var(--fw--400);
 }
 
-.fw--600 {
+/* .fw--600 {
   font-weight: var(--fw--600);
 } */
 
@@ -163,15 +227,98 @@
   --container-width: 80%;
 }
 
-/* .container--px {
-  padding-left: var(--pad-x);
-  padding-right: var(--pad-x);
+.container--pall {
+  padding-inline: var(--pad-x);
+  padding-block: var(--pad-y);
+}
+/* 
+.container--px {
+  padding-inline: var(--pad-x);
+} */
+
+/* .container--py {
+  padding-block: var(--pad-y);
+} */
+
+/* fancy styles */
+.fancy--text {
+  color: var(--c--fancy-fill);
+  -webkit-text-stroke: 1px var(--c--fancy-stroke);
 }
 
-.container--py {
-  padding-top: var(--pad-y);
-  padding-bottom: var(--pad-y);
-} */
+.fancy--element {
+  border: var(--dashed-1);
+  background-color: var(--c--fancy-fill);
+}
+
+/* buttons and inputs */
+.btn--menu {
+  --pos: 2rem;
+  padding-block: 1.5em;
+  padding-inline: 3em;
+  position: fixed;
+  left: var(--pos);
+  bottom: var(--pos);
+  z-index: 4;
+}
+
+.btn--submit,
+.btn--edit,
+.btn--delete {
+  aspect-ratio: 1;
+}
+
+.btn--menu,
+.btn--submit,
+.btn--edit,
+.btn--delete,
+#expense-category,
+#edit-expense-category {
+  cursor: pointer;
+}
+
+.btn--menu,
+.btn--submit,
+.btn--edit,
+.btn--delete,
+#expense-description,
+#edit-expense-description,
+#expense-cost,
+#edit-expense-cost,
+#expense-date,
+#edit-expense-date,
+#expense-category,
+#edit-expense-category,
+#category-description {
+  transition: background-color 3000ms ease-out;
+}
+
+.btn--menu:hover {
+  background-color: var(--c--accent-1);
+}
+
+.btn--menu[data-visible-menu]:hover {
+  background-color: var(--c--accent-2);
+}
+
+.btn--submit:hover {
+  background-color: var(--c--accent-1);
+}
+
+.btn--edit:hover {
+  background-color: var(--c--accent-2);
+}
+
+.btn--delete:hover {
+  background-color: var(--c--accent-3);
+}
+
+/* navigation */
+.expenses-list > *:hover,
+.categories-list > *:hover,
+.navigation-list > *:hover {
+  background-color: var(--c--li-hover);
+}
 
 /* other */
 body[data-blocked-scroll="true"] {
@@ -193,8 +340,3 @@ body[data-blocked-scroll="true"] {
 /* .b-radius {
   border-radius: var(--radius);
 } */
-
-.header-text {
-  font-size: 5rem;
-  margin-bottom: 1rem;
-}

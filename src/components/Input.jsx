@@ -16,6 +16,7 @@ const Input = ({
     <input
       ref={refHandle}
       id={idHandle}
+      className="fancy--element"
       name={nameHandle}
       defaultValue={valueHandle}
       type={typeHandle}
