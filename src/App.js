@@ -35,11 +35,9 @@ function App() {
           <ExpensesContextProvider>
             <Overlay />
             <Routes>
-              <Route element={<ExpensesPage />}>
-                <Route path="/"></Route>
-                <Route path="home"></Route>
-                <Route path="expenses"></Route>
-              </Route>
+              <Route path="/" element={<ExpensesPage />}></Route>
+              <Route path="home" element={<ExpensesPage />}></Route>
+              <Route path="expenses" element={<ExpensesPage />}></Route>
               <Route path="categories" element={<CategoriesPage />}></Route>
               <Route path="insights" element={<InsightsPage />}></Route>
               <Route path="about" element={<AboutPage />}></Route>

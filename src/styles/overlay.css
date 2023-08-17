@@ -6,7 +6,7 @@
   width: 85vw;
   height: 100vh;
   background-color: var(--c--bg-overlay-1);
-  transition: right 400ms ease-in-out;
+  transition: right 300ms ease-in-out;
   overflow: scroll;
 }
 
