@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import useFetch from "../hooks/useFetch";
 import BarChart from "./BarChart";
 import {
   findHighestCostExpense,
   findLowestCostExpense,
 } from "../utils/insightsUtils.js";
+import useMainContext from "../hooks/useMainContext";
 const Insights2 = () => {
   const [barData, setBarData] = useState({
     labels: [],
@@ -15,19 +15,16 @@ const Insights2 = () => {
       },
     ],
   });
-  const { data, isLoading, fetchError } = useFetch(
-    "http://localhost:5000/db",
-    {}
-  );
+  const { isLoading, fetchError, dataFromAPI } = useMainContext();
 
   useEffect(() => {
-    if (!isLoading && data.categories && data.expenses) {
-      const categoryDescriptions = data.categories.map(
+    if (!isLoading && dataFromAPI.categories && dataFromAPI.expenses) {
+      const categoryDescriptions = dataFromAPI.categories.map(
         (category) => category.description
       );
       // Calculate total expenses for each category
       const categoryTotalCosts = {};
-      data.expenses.forEach((expense) => {
+      dataFromAPI.expenses.forEach((expense) => {
         if (categoryTotalCosts[expense.category]) {
           categoryTotalCosts[expense.category] += expense.cost;
         } else {
@@ -50,7 +47,7 @@ const Insights2 = () => {
         ],
       });
     }
-  }, [isLoading, data]);
+  }, [isLoading, dataFromAPI]);
 
   // Use isLoading and fetchError to handle loading and error states
   if (isLoading) {
@@ -62,11 +59,11 @@ const Insights2 = () => {
   }
 
   // Extract categoryDescriptions from the fetched data
-  const categoryDescriptions = data.categories
-    ? data.categories.map((category) => category.description)
+  const categoryDescriptions = dataFromAPI.categories
+    ? dataFromAPI.categories.map((category) => category.description)
     : [];
 
-  const expenses = data.expenses || [];
+  const expenses = dataFromAPI.expenses || [];
 
   // Find the expense with the highest cost
   const highestCostExpense = findHighestCostExpense(expenses);
